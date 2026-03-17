@@ -1,0 +1,52 @@
+---
+name: dockerfile
+description: Dockerfile 最佳实践 - 多阶段构建/镜像优化/安全
+globs: ["Dockerfile*", "docker-compose*"]
+alwaysApply: false
+---
+
+# Dockerfile 规范
+
+## 多阶段构建
+
+```dockerfile
+# 构建阶段
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# 运行阶段
+FROM node:20-alpine AS runner
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+USER node
+EXPOSE 3000
+CMD ["node", "dist/index.js"]
+```
+
+## 镜像优化
+
+- 使用 Alpine 基础镜像
+- 合并 RUN 指令减少层数
+- .dockerignore 排除无关文件
+- 复用基础镜像层
+
+## 安全
+
+```dockerfile
+# 非 root 用户
+RUN addgroup -g 1001 -S appgroup && \
+    adduser -u 1001 -S appuser -G appgroup
+USER appuser
+
+# 只读文件系统
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates && rm -rf /var/lib/apt/lists/*
+```
+
+## 参考
+- `.cursor/skills/docker/`

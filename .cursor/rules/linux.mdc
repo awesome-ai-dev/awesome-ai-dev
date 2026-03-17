@@ -1,0 +1,94 @@
+---
+name: linux
+description: Linux 规范 - 命令行/系统管理/Shell 脚本
+globs: ["**/*.sh", "**/Makefile"]
+alwaysApply: false
+---
+
+# Linux 规范
+
+## 常用命令
+
+### 文件操作
+```bash
+# 查找
+find . -name "*.ts" -type f
+grep -r "function" --include="*.ts"
+
+# 压缩
+tar -czvf archive.tar.gz directory/
+tar -xzvf archive.tar.gz
+
+# 权限
+chmod +x script.sh
+chown user:group file
+```
+
+### 系统管理
+```bash
+# 进程
+ps aux | grep node
+top / htop
+kill -9 <pid>
+
+# 网络
+curl -X POST https://api.example.com
+ss -tulpn | grep LISTEN
+
+# 磁盘
+df -h
+du -sh directory/
+```
+
+## Shell 脚本
+
+```bash
+#!/bin/bash
+
+set -euo pipefail
+
+# 变量
+NAME="world"
+echo "Hello ${NAME}"
+
+# 条件
+if [ -f file ]; then
+    echo "exists"
+fi
+
+# 循环
+for f in *.txt; do
+    echo "$f"
+done
+
+# 函数
+function greet() {
+    echo "Hello $1"
+}
+greet "World"
+```
+
+## Docker 命令
+
+```bash
+# 镜像
+docker build -t myapp .
+docker images
+
+# 容器
+docker run -d -p 3000:3000 myapp
+docker ps -a
+docker logs -f container
+
+# 清理
+docker system prune -a
+```
+
+## 最佳实践
+1. 脚本加 shebang
+2. 错误时退出 set -e
+3. 变量加引号
+4. 注释关键逻辑
+
+## 参考
+- `.cursor/skills/devops/`

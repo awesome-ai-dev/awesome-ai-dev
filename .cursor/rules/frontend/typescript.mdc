@@ -1,0 +1,71 @@
+---
+name: typescript
+description: TypeScript 规范 - 类型/接口/泛型/utility types
+globs: ["**/*.ts", "**/*.tsx"]
+alwaysApply: false
+---
+
+# TypeScript 规范
+
+## 类型定义
+
+### 基础类型
+```typescript
+let name: string = 'test';
+let num: number = 1;
+let bool: boolean = true;
+let arr: string[] = ['a', 'b'];
+let obj: Record<string, any> = {};
+```
+
+### 接口 vs 类型
+```typescript
+// 接口 - 可扩展
+interface User {
+  id: number;
+  name: string;
+}
+
+// 类型 - 联合/交叉
+type Status = 'active' | 'inactive';
+type UserWithRole = User & { role: string };
+```
+
+### 泛型
+```typescript
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+interface ApiResponse<T> {
+  data: T;
+  status: number;
+}
+```
+
+## Utility Types
+
+```typescript
+// 部分类型
+type PartialUser = Partial<User>;
+
+// 必须类型
+type RequiredUser = Required<User>;
+
+// 只读
+type ReadonlyUser = Readonly<User>;
+
+// Pick / Omit
+type UserPreview = Pick<User, 'id' | 'name'>;
+type NoPassword = Omit<User, 'password'>;
+```
+
+## 最佳实践
+1. 启用 strict 模式
+2. 避免 any，用 unknown
+3. 优先使用类型推断
+4. 善用 utility types
+
+## 参考
+- `.cursor/rules/react.mdc`
+- `.cursor/rules/vue3.mdc`

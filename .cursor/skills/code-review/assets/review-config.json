@@ -1,0 +1,58 @@
+{
+  "review": {
+    "checklist": {
+      "codeQuality": {
+        "readability": true,
+        "maintainability": true,
+        "complexity": true,
+        "naming": true
+      },
+      "functionality": {
+        "businessLogic": true,
+        "errorHandling": true,
+        "inputValidation": true,
+        "dataHandling": true
+      },
+      "security": {
+        "sqlInjection": true,
+        "xss": true,
+        "authentication": true,
+        "authorization": true,
+        "secrets": true
+      },
+      "performance": {
+        "databaseQueries": true,
+        "memoryUsage": true,
+        "frontend": true
+      },
+      "testing": {
+        "coverage": true,
+        "testQuality": true
+      },
+      "standards": {
+        "formatting": true,
+        "naming": true,
+        "typescript": true
+      }
+    },
+    "severity": {
+      "critical": "🔴 高",
+      "medium": "🟡 中",
+      "low": "🟢 低"
+    },
+    "thresholds": {
+      "maxFunctionLength": 50,
+      "maxCyclomaticComplexity": 10,
+      "maxFileLength": 300,
+      "maxParameters": 4
+    }
+  },
+  "autoreview": {
+    "tools": ["eslint", "typescript", "prettier"],
+    "patterns": {
+      "secrets": ["apiKey", "apikey", "secret", "password", "token"],
+      "issues": ["TODO", "FIXME", "HACK", "XXX"],
+      "console": ["console.log", "console.error", "console.warn"]
+    }
+  }
+}

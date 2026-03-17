@@ -1,0 +1,32 @@
+{
+  "hooks": [
+    {
+      "name": "format-on-save",
+      "trigger": "afterFileEdit",
+      "command": "npx",
+      "args": ["prettier", "--write", "$FILE_PATH"],
+      "description": "保存文件后自动格式化"
+    },
+    {
+      "name": "lint-on-save",
+      "trigger": "afterFileEdit",
+      "command": "npx",
+      "args": ["eslint", "--fix", "$FILE_PATH"],
+      "description": "保存文件后自动修复 ESLint 错误"
+    },
+    {
+      "name": "typecheck",
+      "trigger": "beforeSubmitPrompt",
+      "command": "npx",
+      "args": ["tsc", "--noEmit"],
+      "description": "提交前检查类型"
+    },
+    {
+      "name": "test-before-commit",
+      "trigger": "beforeSubmitPrompt",
+      "command": "npm",
+      "args": ["test", "--", "--run"],
+      "description": "提交前运行测试"
+    }
+  ]
+}

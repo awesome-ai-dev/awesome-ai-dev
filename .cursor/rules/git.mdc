@@ -1,0 +1,78 @@
+---
+name: git
+description: Git 规范 - 分支管理/提交规范/工作流
+globs: ["**/.git/**"]
+alwaysApply: false
+---
+
+# Git 规范
+
+## 分支管理
+
+```
+main      ──── 生产环境
+│
+develop   ──── 开发主分支
+│
+feature/  ──── 功能分支
+bugfix/   ──── 修复分支
+hotfix/   ──── 紧急修复
+release/  ──── 发布分支
+```
+
+## 提交规范
+
+### 格式
+```
+<type>(<scope>): <subject>
+
+<body>
+
+Closes #123
+```
+
+### Type
+- `feat`: 新功能
+- `fix`: Bug 修复
+- `docs`: 文档
+- `style`: 格式
+- `refactor`: 重构
+- `test`: 测试
+- `chore`: 构建/工具
+
+### 示例
+```
+feat(auth): 添加 JWT 登录
+
+实现用户登录功能，支持 JWT Token 验证。
+
+Closes #123
+```
+
+## 常用命令
+
+```bash
+# 创建分支
+git checkout -b feature/user-login
+
+# 变基合并
+git rebase main
+
+# 交互式变基
+git rebase -i HEAD~3
+
+# 暂存修改
+git stash push -m "work in progress"
+
+# 清理分支
+git remote prune origin
+```
+
+## 最佳实践
+1. 频繁提交
+2. 提交信息清晰
+3. 定期同步主分支
+4. 使用 pull --rebase
+
+## 参考
+- `.cursor/rules/project.mdc`

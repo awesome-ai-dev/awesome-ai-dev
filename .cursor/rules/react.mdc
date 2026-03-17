@@ -1,0 +1,114 @@
+---
+name: react
+description: React 开发规范 - Actions/use()/Server Actions/useOptimistic/并发特性
+globs: ["**/*.tsx", "**/*.jsx", "**/*.ts"]
+alwaysApply: false
+---
+
+# React 开发规范
+
+## 新特性
+
+### 1. use() Hook - 简化数据获取
+```typescript
+import { use } from 'react';
+
+function UserProfile({ userPromise }) {
+  const user = use(userPromise);
+  return <div>{user.name}</div>;
+}
+
+// 读取 Context
+const ThemeContext = createContext(null);
+function App() {
+  const theme = use(ThemeContext);
+}
+```
+
+### 2. Actions - 表单处理
+```typescript
+'use client';
+import { useActionState, useFormStatus } from 'react';
+
+async function createUser(formData: FormData) {
+  'use server';
+  const name = formData.get('name');
+  await db.user.create({ name });
+  revalidatePath('/users');
+}
+
+const [state, formAction, isPending] = useActionState(createUser, null);
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return <button disabled={pending}>{pending ? '提交中...' : '提交'}</button>;
+}
+
+<form action={formAction}>
+  <input name="name" />
+  <SubmitButton />
+</form>
+```
+
+### 3. useOptimistic - 乐观更新
+```typescript
+import { useOptimistic } from 'react';
+
+function LikeButton({ likes, onLike }) {
+  const [optimisticLikes, addOptimisticLike] = useOptimistic(
+    likes,
+    (state, newLike) => state + newLike
+  );
+
+  return (
+    <button onClick={async () => {
+      addOptimisticLike(1);
+      await onLike();
+    }}>
+      👍 {optimisticLikes}
+    </button>
+  );
+}
+```
+
+## 组件模式
+
+### Server Component (默认)
+```typescript
+async function UserList() {
+  const users = await db.user.findMany();
+  return <List users={users} />;
+}
+```
+
+### Client Component
+```typescript
+'use client';
+import { useState, use, useActionState } from 'react';
+```
+
+## 状态管理
+
+- **Zustand**: 轻量状态
+- **Jotai**: 原子化状态
+- **TanStack Query**: 服务端状态
+- **useActionState**: 表单状态
+
+## 性能优化
+
+```typescript
+<Suspense fallback={<Loading />}>
+  <UserProfile id={id} />
+</Suspense>
+
+const deferredQuery = useDeferredValue(query);
+```
+
+## 最佳实践
+1. 优先 Server Component
+2. 表单用 Actions
+3. 列表用 useOptimistic
+4. 用 use() 替代 useEffect + fetch
+
+## 参考
+- 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`

@@ -1,0 +1,101 @@
+---
+name: python-fastapi
+description: FastAPI 开发规范 - 路由/依赖注入/数据库/认证/异步/Pydantic v2
+globs: ["**/*.py"]
+alwaysApply: false
+---
+
+# FastAPI 开发规范
+
+## Pydantic v2
+
+### 类型提示
+```python
+from pydantic import BaseModel, EmailStr, Field
+
+class User(BaseModel):
+    id: int = Field(default=None, frozen=True)
+    name: str = Field(min_length=2, max_length=50)
+    email: EmailStr
+    role: str = 'user'
+    
+    model_config = {'str_strip_whitespace': True}
+```
+
+### 验证器
+```python
+from pydantic import field_validator
+
+class User(BaseModel):
+    password: str
+    
+    @field_validator('password')
+    @classmethod
+    def validate_password(cls, v: str) -> str:
+        if len(v) < 8:
+            raise ValueError('密码至少8位')
+        return v
+```
+
+### 依赖注入
+```python
+from fastapi import Depends, Request
+
+async def get_current_user(request: Request, token: str = Depends(oauth2_scheme)):
+    return await verify_token(token)
+
+@app.get('/users/me')
+async def read_users(current_user = Depends(get_current_user)):
+    return current_user
+```
+
+## 项目结构
+
+```
+app/
+├── api/
+├── models/
+├── schemas/
+├── services/
+└── main.py
+```
+
+## 路由
+```python
+from fastapi import APIRouter, Depends, Query
+
+router = APIRouter()
+
+@router.get('/users')
+async def get_users(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(10, le=100),
+    current_user = Depends(get_current_user)
+):
+    offset = (page - 1) * page_size
+    users = await db.query(User).offset(offset).limit(page_size).all()
+    return {'data': users, 'page': page}
+```
+
+## 数据库 (SQLAlchemy 2.0)
+
+```python
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+class UserRepository:
+    async def get_by_email(self, db: AsyncSession, email: str) -> User | None:
+        result = await db.execute(
+            select(User).where(User.email == email)
+        )
+        return result.scalar_one_or_none()
+```
+
+## 最佳实践
+1. 使用 Pydantic v2 验证
+2. 异步 SQLAlchemy 2.0
+3. 依赖注入管理数据库
+4. 统一错误响应
+
+## 参考
+- 详细: `.cursor/skills/code-review/references/`

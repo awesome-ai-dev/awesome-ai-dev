@@ -1,0 +1,66 @@
+---
+name: testing
+description: 测试规范 - 单元测试/集成测试/E2E/Vitest/Playwright
+globs: ["**/*.test.ts", "**/*.spec.ts"]
+alwaysApply: false
+---
+
+# 测试规范
+
+## Vitest
+
+```typescript
+import { describe, it, expect, vi } from 'vitest';
+
+describe('UserService', () => {
+  it('should create user', async () => {
+    const mockRepo = vi.fn().mockResolvedValue({ id: 1, name: 'John' });
+    const service = new UserService(mockRepo);
+    
+    const user = await service.create({ name: 'John' });
+    
+    expect(user.id).toBe(1);
+    expect(mockRepo).toHaveBeenCalled();
+  });
+});
+```
+
+## React Testing Library
+
+```typescript
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+test('should submit form', async () => {
+  render(<Form onSubmit={fn} />);
+  
+  await userEvent.type(screen.getByLabelText('Name'), 'John');
+  await userEvent.click(screen.getByRole('button', { name: 'Submit' }));
+  
+  expect(fn).toHaveBeenCalledWith({ name: 'John' });
+});
+```
+
+## Playwright
+
+```typescript
+import { test, expect } from '@playwright/test';
+
+test('login flow', async ({ page }) => {
+  await page.goto('/login');
+  await page.fill('[name=email]', 'test@example.com');
+  await page.fill('[name=password]', 'password');
+  await page.click('button[type=submit]');
+  
+  await expect(page).toHaveURL('/dashboard');
+});
+```
+
+## 最佳实践
+1. AAA 模式 (Arrange-Act-Assert)
+2. 测试名称描述行为
+3. Mock 外部依赖
+4. 覆盖率目标 80%+
+
+## 参考
+- `.cursor/skills/testing/`

@@ -1,0 +1,79 @@
+---
+name: rust
+description: Rust 开发规范 - 所有权/生命周期/并发/性能
+globs: ["**/*.rs"]
+alwaysApply: false
+---
+
+# Rust 开发规范
+
+## 特性
+
+### 所有权系统
+```rust
+// 所有权转移
+let s1 = String::from("hello");
+let s2 = s1; // s1 移动到 s2
+
+// 引用
+fn len(s: &String) -> usize { s.len() }
+
+// 可变引用
+fn modify(s: &mut String) { s.push_str(" world"); }
+```
+
+### 生命周期
+```rust
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() { x } else { y }
+}
+```
+
+### 错误处理
+```rust
+// Option
+fn find_user(id: u32) -> Option<User> { ... }
+
+// Result
+fn read_file(path: &str) -> Result<String, io::Error> {
+    std::fs::read_to_string(path)
+}
+
+// ?
+fn main() -> Result<(), Box<dyn Error>> {
+    let content = std::fs::read_to_string("file.txt")?;
+    Ok(())
+}
+```
+
+### 并发
+```rust
+use std::thread;
+
+let handle = thread::spawn(|| {
+    // 子线程
+});
+handle.join().unwrap();
+
+// Arc + Mutex
+use std::sync::{Arc, Mutex};
+let counter = Arc::new(Mutex::new(0));
+```
+
+## 项目结构
+
+```
+src/
+├── main.rs
+├── lib.rs
+└── modules/
+```
+
+## 最佳实践
+1. 优先使用借用而非克隆
+2. 用 ? 简化错误处理
+3. 生命周期标注清晰
+4. 充分利用类型系统
+
+## 参考
+- `.cursor/skills/`

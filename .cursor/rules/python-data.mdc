@@ -1,0 +1,88 @@
+---
+name: python-data
+description: Python 数据科学 - Pandas/NumPy/机器学习/可视化
+globs: ["**/*.py"]
+alwaysApply: false
+---
+
+# Python 数据科学规范
+
+## 数据处理
+
+### Pandas
+```python
+import pandas as pd
+
+# 读取数据
+df = pd.read_csv('data.csv')
+
+# 数据清洗
+df.dropna()
+df.fillna(0)
+df.drop_duplicates()
+
+# 数据转换
+df['date'] = pd.to_datetime(df['date'])
+df = df.groupby('category').agg({'value': 'sum'})
+```
+
+### NumPy
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+arr.reshape(3, 1)
+np.dot(a, b)
+```
+
+## 机器学习
+
+### Scikit-learn
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+```
+
+### PyTorch
+```python
+import torch
+import torch.nn as nn
+
+model = nn.Linear(10, 1)
+criterion = nn.MSELoss()
+optimizer = torch.optim.Adam(model.parameters())
+```
+
+## 可视化
+
+### Matplotlib
+```python
+import matplotlib.pyplot as plt
+
+plt.plot(x, y)
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+```
+
+### Seaborn
+```python
+import seaborn as sns
+
+sns.lineplot(data=df, x='date', y='value')
+sns.heatmap(corr_matrix)
+```
+
+## 最佳实践
+1. 向量化操作替代循环
+2. 链式调用提高可读性
+3. 类型注解
+4. 充足注释
+
+## 参考
+- `.cursor/skills/`

@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "description": "Prisma Schema 模板配置",
+  "templates": {
+    "user": {
+      "fields": ["id", "email", "name", "password", "avatar", "role", "createdAt", "updatedAt"],
+      "indexes": ["email"],
+      "relations": []
+    },
+    "post": {
+      "fields": ["id", "title", "content", "published", "authorId", "createdAt", "updatedAt"],
+      "indexes": ["authorId", "published"],
+      "relations": ["author"]
+    },
+    "order": {
+      "fields": ["id", "userId", "status", "total", "items", "createdAt", "updatedAt"],
+      "indexes": ["userId", "status", "createdAt"],
+      "relations": ["user", "items"]
+    }
+  },
+  "commonFields": {
+    "timestamp": {
+      "createdAt": "DateTime @default(now())",
+      "updatedAt": "DateTime @updatedAt"
+    },
+    "softDelete": {
+      "deletedAt": "DateTime?"
+    },
+    "pagination": {
+      "@@skip": 0,
+      "@@take": 20
+    }
+  },
+  "examples": {
+    "basic": "generator client { provider = \"prisma-client-js\" }\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id        Int      @id @default(autoincrement())\n  email     String   @unique\n  name      String?\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}",
+    "withRelations": "model Post {\n  id        Int      @id @default(autoincrement())\n  title     String\n  content   String?\n  authorId  Int\n  author    User     @relation(fields: [authorId], references: [id])\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  @@index([authorId])\n}"
+  }
+}

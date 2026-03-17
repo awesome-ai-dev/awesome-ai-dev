@@ -1,0 +1,81 @@
+---
+name: kubernetes
+description: Kubernetes 规范 - Pod/Service/Deployment/Helm
+globs: ["**/*.yaml", "**/*.yml"]
+alwaysApply: false
+---
+
+# Kubernetes 规范
+
+## Deployment
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: app:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+```
+
+## Service
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+spec:
+  selector:
+    app: app
+  ports:
+  - port: 80
+    targetPort: 3000
+  type: ClusterIP
+```
+
+## Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+spec:
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app
+            port:
+              number: 80
+```
+
+## 最佳实践
+1. 使用资源限制
+2. 健康检查探针
+3. 配置分离 dev/prod
+
+## 参考
+- `.cursor/skills/docker/`

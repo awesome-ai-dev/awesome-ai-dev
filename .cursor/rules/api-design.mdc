@@ -1,0 +1,82 @@
+---
+name: api-design
+description: API 设计规范 - RESTful/GraphQL/版本控制
+globs: ["**/*route.ts", "**/*controller.ts"]
+alwaysApply: false
+---
+
+# API 设计规范
+
+## RESTful
+
+### 资源命名
+```
+GET    /users          # 列表
+POST   /users          # 创建
+GET    /users/:id      # 详情
+PUT    /users/:id      # 更新
+DELETE /users/:id      # 删除
+```
+
+### 响应格式
+```json
+{
+  "data": { "id": 1, "name": "John" },
+  "meta": { "page": 1, "total": 100 }
+}
+```
+
+### 状态码
+```
+200 OK
+201 Created
+204 No Content
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+500 Internal Server Error
+```
+
+## GraphQL
+
+### Schema
+```graphql
+type User {
+  id: ID!
+  name: String!
+  posts: [Post!]!
+}
+
+type Query {
+  user(id: ID!): User
+  users(first: Int, after: String): UserConnection
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+}
+```
+
+## 版本控制
+
+### URL 版本
+```
+/api/v1/users
+/api/v2/users
+```
+
+### Header 版本
+```
+Accept: application/vnd.myapp.v2+json
+```
+
+## 最佳实践
+1. 使用名词复数
+2. 过滤/分页/排序
+3. 错误信息清晰
+4. API 文档完善
+
+## 参考
+- `.cursor/rules/nestjs.mdc`
+- `.cursor/rules/python-fastapi.mdc`

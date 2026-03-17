@@ -1,0 +1,122 @@
+---
+name: vue3
+description: Vue 开发规范 - Composition API/响应式/状态管理/Pinia/VueUse
+globs: ["**/*.vue", "**/*.ts"]
+alwaysApply: false
+---
+
+# Vue 开发规范
+
+## Composition API
+
+### defineOptions
+```typescript
+<script setup lang="ts">
+defineOptions({
+  name: 'UserCard',
+  inheritAttrs: false,
+});
+</script>
+```
+
+### TypedDefineProps
+```typescript
+<script setup lang="ts">
+interface User {
+  id: number;
+  name: string;
+}
+
+const props = defineProps<{
+  user: User;
+  active?: boolean;
+}>();
+</script>
+```
+
+### Generic Components
+```typescript
+<script setup lang="ts" generic="T extends { id: number }">
+defineProps<{
+  items: T[];
+}>();
+
+const emit = defineEmits<{
+  select: [item: T];
+}>();
+</script>
+```
+
+### setup 语法糖
+```vue
+<script setup lang="ts">
+const count = ref(0);
+const double = computed(() => count.value * 2);
+
+function increment() {
+  count.value++;
+}
+
+onMounted(() => {
+  console.log('mounted');
+});
+</script>
+```
+
+### 响应式 API
+```typescript
+const count = ref(0);
+const state = reactive({ user: null, loading: false });
+const filtered = computed(() => list.value.filter(item => item.active));
+
+watch(() => props.id, (newId) => {
+  fetchUser(newId);
+});
+```
+
+## 状态管理 (Pinia)
+
+```typescript
+import { defineStore } from 'pinia';
+
+export const useUserStore = defineStore('user', () => {
+  const user = ref<User | null>(null);
+  const loading = ref(false);
+  
+  async function fetchUser(id: number) {
+    loading.value = true;
+    try {
+      user.value = await api.getUser(id);
+    } finally {
+      loading.value = false;
+    }
+  }
+  
+  return { user, loading, fetchUser };
+});
+```
+
+## VueUse
+
+```typescript
+import { 
+  useLocalStorage,
+  useDebounceFn,
+  useFetch,
+  useDark,
+  useClipboard,
+} from '@vueuse/core';
+
+const storage = useLocalStorage('theme', 'dark');
+const { copy, pasted } = useClipboard();
+```
+
+## 最佳实践
+1. 使用 `<script setup>` 语法糖
+2. 组件名用 PascalCase
+3. v-for 必加 key
+4. 用 Pinia 替代 Vuex
+5. 用 VueUse 简化逻辑
+
+## 参考
+- 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`

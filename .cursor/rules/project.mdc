@@ -1,0 +1,89 @@
+---
+name: project
+description: 通用项目开发规范 - Git/TypeScript/ESLint/代码风格/AI 辅助开发
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# 通用项目规范
+
+## Git 提交规范
+
+### 格式
+```
+<type>(<scope>): <subject>
+
+<body>
+
+Closes #123
+```
+
+### Type
+- `feat`: 新功能
+- `fix`: Bug 修复
+- `docs`: 文档
+- `style`: 格式
+- `refactor`: 重构
+- `test`: 测试
+- `chore`: 构建/工具
+
+## TypeScript
+
+### tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "bundler"
+  }
+}
+```
+
+### 导入顺序
+```typescript
+// 1. React/框架
+import { useState } from 'react';
+
+// 2. 外部库
+import { z } from 'zod';
+
+// 3. 内部模块
+import { useUserStore } from '@/stores';
+
+// 4. 类型
+import type { User } from '@/types';
+```
+
+## AI 辅助开发
+
+### Cursor 技巧
+- `Cmd+K`: 生成/编辑代码
+- `Cmd+L`: 对话模式
+- `@文件`: 引用文件
+- `/skill`: 调用技能
+
+### 提示词结构
+```markdown
+## 需求
+[描述需求]
+
+## 技术栈
+- 框架：xxx
+- 数据库：xxx
+
+## 要求
+1. 遵循项目规范
+2. 包含错误处理
+3. 类型安全
+```
+
+## 目录原则
+1. 按功能分组
+2. 组件+逻辑放一起
+3. 公共代码抽离
+
+## 参考
+- 框架: `@nextjs`, `@react`, `@vue3`, `@nestjs`, `@python-fastapi`
+- 技能: `.cursor/skills/`

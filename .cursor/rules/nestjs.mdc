@@ -1,0 +1,94 @@
+---
+name: nestjs
+description: NestJS 开发规范 - 模块化/依赖注入/Standalone/GraphQL/微服务
+globs: ["**/*.ts"]
+alwaysApply: false
+---
+
+# NestJS 开发规范
+
+## 特性
+
+### Standalone 应用
+```typescript
+import { NestFactory } from '@nestjs/core';
+import { Controller, Get, Injectable } from '@nestjs/common';
+
+@Injectable()
+class UserService {
+  findAll() { return ['user1', 'user2']; }
+}
+
+@Controller()
+class UserController {
+  constructor(private userService: UserService) {}
+  
+  @Get()
+  findAll() { return this.userService.findAll(); }
+}
+
+async function bootstrap() {
+  const app = await NestFactory.create(UserController);
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+### Signal-based 状态
+```typescript
+import { signal, computed } from '@nestjs/core';
+
+class CounterService {
+  count = signal(0);
+  double = computed(() => this.count() * 2);
+  
+  increment() { this.count.update(c => c + 1); }
+}
+```
+
+### 依赖注入
+```typescript
+@Controller('users')
+export class UserController {
+  constructor(private userService: UserService) {}
+}
+```
+
+## 模块结构
+
+```
+src/
+├── controllers/
+├── services/
+├── modules/
+├── dto/
+├── entities/
+├── guards/
+└── filters/
+```
+
+## 控制器
+```typescript
+@Controller('users')
+export class UserController {
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.userService.findOne(id);
+  }
+  
+  @Post()
+  @UseGuards(AuthGuard)
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.userService.create(createUserDto);
+  }
+}
+```
+
+## 最佳实践
+1. 控制器只做参数解析
+2. 业务逻辑放服务层
+3. 用 DTO + class-validator 验证
+4. 用 Interceptor 统一响应格式
+
+## 参考
+- 详细: `.cursor/skills/code-review/references/`

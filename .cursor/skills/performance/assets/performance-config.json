@@ -1,0 +1,44 @@
+{
+  "performance": {
+    "targets": {
+      "lcp": 2500,
+      "fid": 100,
+      "cls": 0.1,
+      "ttfb": 600
+    },
+    "budgets": {
+      "javascript": "170kB",
+      "css": "45kB",
+      "images": "320kB",
+      "fonts": "65kB",
+      "total": "500kB"
+    },
+    "thresholds": {
+      "warning": 0.8,
+      "critical": 0.5
+    }
+  },
+  "optimization": {
+    "image": {
+      "formats": ["webp", "avif"],
+      "quality": 80,
+      "responsive": {
+        "breakpoints": [320, 640, 960, 1280, 1920]
+      }
+    },
+    "cache": {
+      "static": "public, max-age=31536000, immutable",
+      "dynamic": "public, max-age=3600, must-revalidate",
+      "api": "no-cache"
+    },
+    "lazyLoad": {
+      "threshold": "50kB",
+      "placeholder": "blur"
+    }
+  },
+  "monitoring": {
+    "webVitals": ["LCP", "FID", "CLS", "TTFB", "FCP", "SI"],
+    "reportTo": "/api/vitals",
+    "debug": false
+  }
+}

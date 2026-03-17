@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "${workspaceFolder}"]
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["-y", "mcp-server-git", "--repository", "${workspaceFolder}"]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${env:DATABASE_URL}"]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite"]
+    },
+    "search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-search"]
+    },
+    "everart": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everart"]
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"]
+    },
+    "sentry": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"]
+    }
+  }
+}

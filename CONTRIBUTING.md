@@ -9,7 +9,7 @@
 ### 贡献方式
 
 | 方式 | 说明 |
-|------|------|
+| ------ | ------ |
 | 🐛 提交 Bug | 发现问题请提交 Issue |
 | 💡 提出建议 | 有好想法请提交 Feature Request |
 | 📝 补充内容 | 完善 Rules、Skills、Prompts |
@@ -18,7 +18,7 @@
 
 ### 贡献流程
 
-```
+```markdown
 1. Fork 本项目
 2. 创建分支 (git checkout -b feature/xxx)
 3. 提交更改 (git commit -m 'add: xxx')
@@ -41,7 +41,7 @@
 ### 贡献规范
 
 | 类型 | 规范 |
-|------|------|
+| ------ | ------ |
 | Rules | 使用 `.mdc` 格式，包含 name、description、globs |
 | Skills | 包含 SKILL.md，可选 scripts、references、assets |
 | Agents | 使用 YAML 格式，包含 name、description、model |
@@ -58,7 +58,7 @@
 
 ## 项目结构
 
-```
+```markdown
 ai-summary/
 ├── .cursor/          # Cursor IDE 配置
 │   ├── rules/        # 开发规范
@@ -75,7 +75,7 @@ ai-summary/
 
 ### 提交信息格式
 
-```
+```markdown
 <type>(<scope>): <subject>
 
 <body>
@@ -84,7 +84,7 @@ ai-summary/
 ### Type 说明
 
 | Type | 说明 |
-|------|------|
+| ------ | ------ |
 | feat | 新功能 |
 | fix | 修复 Bug |
 | docs | 文档 |
@@ -95,7 +95,7 @@ ai-summary/
 
 ### 示例
 
-```
+```markdown
 feat(rules): 添加 Flutter 开发规范
 
 添加 Flutter 3 开发规范，包含：

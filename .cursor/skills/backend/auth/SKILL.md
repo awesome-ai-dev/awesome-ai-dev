@@ -69,10 +69,12 @@ passport.use(new GitHubStrategy({
 ```
 
 ## 最佳实践
+
 1. 密码加密 bcrypt
 2. Token 过期时间
 3. 刷新令牌机制
 4. HTTPS only cookie
 
 ## 参考
+
 - `.cursor/rules/nestjs.mdc`

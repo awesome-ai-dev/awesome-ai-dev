@@ -17,6 +17,7 @@ description: 移动端开发专家 - React Native/Flutter/iOS/Android
 ## 核心技能
 
 ### React Native (Expo)
+
 ```typescript
 // 路由
 import { Stack } from 'expo-router';
@@ -36,6 +37,7 @@ const { MyModule } = NativeModules;
 ```
 
 ### 状态管理
+
 ```typescript
 // React Context
 import { createContext, useContext, useState } from 'react';
@@ -56,6 +58,7 @@ const useStore = create((set) => ({
 ```
 
 ### 原生能力
+
 ```typescript
 // 相机
 import { CameraView } from 'expo-camera';

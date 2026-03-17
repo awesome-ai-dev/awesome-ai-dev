@@ -3,24 +3,28 @@
 ## 镜像优化
 
 ### 1. 多阶段构建
+
 - 减少最终镜像大小
 - 分离构建和运行环境
 
 ### 2. 基础镜像选择
+
 - 优先使用 Alpine
 - 指定版本号
 
 ### 3. 层缓存优化
+
 - 频繁变化的内容放后面
 - COPY package*.json 先于 COPY 代码
 
 ### 4. .dockerignore
-```
+
+```markdown
 node_modules
 .git
 *.md
 .env
-```
+```markdown
 
 ## 安全加固
 
@@ -30,14 +34,14 @@ RUN addgroup -g 1001 appgroup && \
     adduser -u 1001 -G appgroup -s /bin/sh -D appuser
 
 USER appuser
-```
+```markdown
 
 ## 健康检查
 
 ```dockerfile
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
-```
+```markdown
 
 ## 常用命令
 
@@ -56,7 +60,7 @@ docker exec -it container_id sh
 
 # 清理
 docker system prune -a
-```
+```markdown
 
 ## Docker Compose 技巧
 
@@ -70,6 +74,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-```
+```markdown
 
 ---

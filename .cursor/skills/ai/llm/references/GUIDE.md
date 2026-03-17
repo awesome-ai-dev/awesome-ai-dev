@@ -12,6 +12,7 @@
 ## 提示词技巧
 
 ### System Prompt
+
 ```typescript
 const systemPrompt = `
 ## 角色
@@ -30,6 +31,7 @@ const systemPrompt = `
 ```
 
 ### Few-shot
+
 ```typescript
 const prompt = `
 判断情感:
@@ -44,15 +46,18 @@ const prompt = `
 ## 成本优化
 
 ### Token 估算
+
 - 中文: ~1.5 tokens/字符
 - 英文: ~0.75 tokens/词
 
 ### 成本计算
+
 ```typescript
 const cost = (inputTokens * 0.0015 + outputTokens * 0.015);
 ```
 
 ### 优化策略
+
 1. 精简 system prompt
 2. 压缩历史消息
 3. 使用 streaming
@@ -80,6 +85,7 @@ async function callLLM(prompt: string, retries = 3) {
 ```
 
 ## 最佳实践
+
 1. 结构化输出用 JSON mode
 2. 敏感信息不传入 prompt
 3. 合理设置 temperature

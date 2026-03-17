@@ -17,6 +17,7 @@ description: 测试专家 - 单元测试/集成测试/E2E/Vitest/Playwright/Reac
 ## 测试类型
 
 ### 1. 单元测试 (Vitest)
+
 ```typescript
 import { describe, it, expect, vi } from 'vitest';
 
@@ -35,6 +36,7 @@ describe('UserService', () => {
 ```
 
 ### 2. 组件测试 (React Testing Library)
+
 ```typescript
 import { render, screen, fireEvent } from '@testing-library/react';
 import { UserCard } from './UserCard';
@@ -54,6 +56,7 @@ it('should call onEdit when clicked', () => {
 ```
 
 ### 3. E2E 测试 (Playwright)
+
 ```typescript
 import { test, expect } from '@playwright/test';
 
@@ -68,6 +71,7 @@ test('user login', async ({ page }) => {
 ```
 
 ### 4. API Mock (msw)
+
 ```typescript
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';

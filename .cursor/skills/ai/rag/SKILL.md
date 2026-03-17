@@ -7,9 +7,9 @@ description: RAG 系统 - LangChain/Vectara/向量数据库/文档分割
 
 ## 架构
 
-```
+```markdown
 用户问题 → 检索 → 向量库 → 相关文档 → LLM → 回答
-```
+```markdown
 
 ## LangChain
 
@@ -44,7 +44,7 @@ await store.addDocuments(splitDocs);
 // 检索
 const retriever = store.asRetriever();
 const results = await retriever.getRelevantDocuments('问题');
-```
+```markdown
 
 ## 文档分割策略
 
@@ -63,7 +63,7 @@ const codeSplitter = new RecursiveCharacterTextSplitter({
   chunkOverlap: 50,
   separators: ['\n\n', '\n', '```', ' ']
 });
-```
+```markdown
 
 ## 检索优化
 
@@ -80,13 +80,15 @@ const retriever = vectorStore.asRetriever({
 
 // 混合搜索
 const fusionRetriever = new FusionRetriever([keywordRetriever, semanticRetriever]);
-```
+```markdown
 
 ## 最佳实践
+
 1. 合理选择 chunk size
 2. 混合搜索效果更好
 3. 重排序提升质量
 4. 成本与效果平衡
 
 ## 参考
+
 - `ai-tools/08-ai-platforms-api.md`

@@ -9,7 +9,7 @@ alwaysApply: false
 
 ## 分支管理
 
-```
+```bash
 main      ──── 生产环境
 │
 develop   ──── 开发主分支
@@ -18,20 +18,22 @@ feature/  ──── 功能分支
 bugfix/   ──── 修复分支
 hotfix/   ──── 紧急修复
 release/  ──── 发布分支
-```
+```bash
 
 ## 提交规范
 
 ### 格式
-```
+
+```bash
 <type>(<scope>): <subject>
 
 <body>
 
 Closes #123
-```
+```bash
 
 ### Type
+
 - `feat`: 新功能
 - `fix`: Bug 修复
 - `docs`: 文档
@@ -41,13 +43,14 @@ Closes #123
 - `chore`: 构建/工具
 
 ### 示例
-```
+
+```bash
 feat(auth): 添加 JWT 登录
 
 实现用户登录功能，支持 JWT Token 验证。
 
 Closes #123
-```
+```bash
 
 ## 常用命令
 
@@ -66,13 +69,15 @@ git stash push -m "work in progress"
 
 # 清理分支
 git remote prune origin
-```
+```bash
 
 ## 最佳实践
+
 1. 频繁提交
 2. 提交信息清晰
 3. 定期同步主分支
 4. 使用 pull --rebase
 
 ## 参考
+
 - `.cursor/rules/project.mdc`

@@ -102,10 +102,12 @@ const history = await memory.loadMemoryVariables({});
 | Self-Reflection | 自我反思 |
 
 ## 最佳实践
+
 1. 工具设计要清晰
 2. 错误处理要完善
 3. 避免无限循环
 4. 合理使用记忆
 
 ## 参考
+
 - `ai-tools/08-ai-platforms-api.md`

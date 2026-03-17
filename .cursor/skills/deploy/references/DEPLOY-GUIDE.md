@@ -3,6 +3,7 @@
 ## 服务器配置
 
 ### Ubuntu 环境
+
 ```bash
 # 更新系统
 sudo apt update && sudo apt upgrade -y
@@ -17,6 +18,7 @@ sudo usermod -aG docker $USER
 ```
 
 ### Nginx 配置
+
 ```nginx
 upstream backend {
     server 127.0.0.1:3000;
@@ -42,6 +44,7 @@ server {
 ## 部署脚本
 
 ### 自动部署
+
 ```bash
 #!/bin/bash
 
@@ -60,6 +63,7 @@ pm2 save
 ```
 
 ### 回滚
+
 ```bash
 pm2 delete all
 git checkout v1.0.0
@@ -70,6 +74,7 @@ pm2 start ecosystem.config.js
 ## 监控
 
 ### PM2 监控
+
 ```bash
 pm2 monit
 pm2 list
@@ -77,6 +82,7 @@ pm2 logs --lines 100
 ```
 
 ### 系统监控
+
 ```bash
 htop
 df -h

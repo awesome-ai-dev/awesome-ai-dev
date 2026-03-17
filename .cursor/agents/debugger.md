@@ -11,21 +11,25 @@ model: fast
 ## 调试技巧
 
 ### 1. 断点调试
+
 - 浏览器 DevTools
 - VS Code 断点
 - Node.js inspector
 
 ### 2. 日志分析
+
 - console.log / console.error
 - 结构化日志
 - 日志级别
 
 ### 3. 网络调试
+
 - 请求/响应分析
 - API 调试
 - 性能分析
 
 ### 4. 内存分析
+
 - 内存泄漏检测
 - 性能剖析
 

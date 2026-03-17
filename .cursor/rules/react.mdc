@@ -10,6 +10,7 @@ alwaysApply: false
 ## 新特性
 
 ### 1. use() Hook - 简化数据获取
+
 ```typescript
 import { use } from 'react';
 
@@ -23,9 +24,10 @@ const ThemeContext = createContext(null);
 function App() {
   const theme = use(ThemeContext);
 }
-```
+```bash
 
 ### 2. Actions - 表单处理
+
 ```typescript
 'use client';
 import { useActionState, useFormStatus } from 'react';
@@ -48,9 +50,10 @@ function SubmitButton() {
   <input name="name" />
   <SubmitButton />
 </form>
-```
+```bash
 
 ### 3. useOptimistic - 乐观更新
+
 ```typescript
 import { useOptimistic } from 'react';
 
@@ -69,23 +72,25 @@ function LikeButton({ likes, onLike }) {
     </button>
   );
 }
-```
+```bash
 
 ## 组件模式
 
 ### Server Component (默认)
+
 ```typescript
 async function UserList() {
   const users = await db.user.findMany();
   return <List users={users} />;
 }
-```
+```bash
 
 ### Client Component
+
 ```typescript
 'use client';
 import { useState, use, useActionState } from 'react';
-```
+```bash
 
 ## 状态管理
 
@@ -102,13 +107,15 @@ import { useState, use, useActionState } from 'react';
 </Suspense>
 
 const deferredQuery = useDeferredValue(query);
-```
+```bash
 
 ## 最佳实践
+
 1. 优先 Server Component
 2. 表单用 Actions
 3. 列表用 useOptimistic
 4. 用 use() 替代 useEffect + fetch
 
 ## 参考
+
 - 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`

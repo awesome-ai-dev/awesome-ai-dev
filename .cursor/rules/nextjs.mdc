@@ -10,6 +10,7 @@ alwaysApply: false
 ## 新特性
 
 ### 1. Partial Prerendering (PPR)
+
 ```typescript
 import { Suspense } from 'react';
 
@@ -23,9 +24,10 @@ export default function Page() {
     </div>
   );
 }
-```
+```bash
 
 ### 2. Server Actions
+
 ```typescript
 // app/actions.ts
 'use server';
@@ -45,9 +47,10 @@ import { createUser } from './actions';
   <input name="name" />
   <button type="submit">提交</button>
 </form>
-```
+```bash
 
 ### 3. use() 在 Server Components
+
 ```typescript
 async function UserProfile({ userPromise }) {
   const user = await userPromise;
@@ -57,11 +60,12 @@ async function UserProfile({ userPromise }) {
 <Suspense fallback={<Loading />}>
   <UserProfile userPromise={getUser(id)} />
 </Suspense>
-```
+```bash
 
 ## 数据获取
 
 ### Server Component
+
 ```typescript
 async function getData() {
   const res = await fetch('https://api.example.com/data', {
@@ -74,9 +78,10 @@ export default async function Page() {
   const data = await getData();
   return <div>{data.title}</div>;
 }
-```
+```bash
 
 ### Client Component
+
 ```typescript
 'use client';
 import { use } from 'react';
@@ -85,12 +90,13 @@ function UserList({ usersPromise }) {
   const users = use(usersPromise);
   return <ul>{users.map(u => <li key={u.id}>{u.name}</li>)}</ul>;
 }
-```
+```bash
 
 ## 路由规范
 
 ### 目录结构
-```
+
+```bash
 app/
 ├── (group)/           # 路由组
 │   ├── page.tsx
@@ -100,9 +106,10 @@ app/
 │   └── users/
 │       └── route.ts
 └── layout.tsx
-```
+```bash
 
 ### 特殊文件
+
 - `page.tsx` - 页面
 - `layout.tsx` - 布局
 - `loading.tsx` - 加载态
@@ -111,10 +118,12 @@ app/
 - `route.ts` - API 端点
 
 ## 最佳实践
+
 1. 默认 Server Component
 2. 表单用 Server Actions
 3. 用 Suspense 实现流式加载
 4. 静态内容用 ISR
 
 ## 参考
+
 - 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`

@@ -29,7 +29,7 @@ interface Config {
   timeout?: number;
   retries?: number;
 }
-```
+```markdown
 
 ### 函数
 
@@ -50,7 +50,7 @@ const debounce = <T extends (...args: any[]) => any>(
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 };
-```
+```markdown
 
 ---
 
@@ -89,7 +89,7 @@ export function UserProfile({ user, onUpdate }: Props) {
     </div>
   );
 }
-```
+```markdown
 
 ### Hooks 规范
 
@@ -114,7 +114,7 @@ function Component() {
   
   return <List items={data} />;
 }
-```
+```markdown
 
 ---
 
@@ -122,7 +122,7 @@ function Component() {
 
 ### 文件命名
 
-```
+```markdown
 components/
 ├── UserProfile.tsx        # 组件: PascalCase
 ├── use-user.ts           # Hook: use- 前缀
@@ -130,7 +130,7 @@ components/
 ├── constants.ts          # 常量: camelCase
 ├── types.ts              # 类型: camelCase
 └── api-client.ts         # API: camelCase
-```
+```markdown
 
 ### 命名惯例
 
@@ -151,7 +151,7 @@ interface UserProfile {}
 class Service {
   private _cache: Map<string, any>;
 }
-```
+```markdown
 
 ---
 
@@ -179,7 +179,7 @@ import { calculateTotal } from './calculator';
 
 // 6. 样式（可选）
 import styles from './Button.module.css';
-```
+```markdown
 
 ---
 
@@ -219,7 +219,7 @@ if (result.ok) {
 } else {
   console.error(result.error);
 }
-```
+```markdown
 
 ---
 
@@ -248,4 +248,4 @@ function formatUserName(user: User): string {
 // ❌ 解释代码做什么（代码本身已经说明）
 // 设置 count 为 0
 const count = 0;
-```
+```markdown

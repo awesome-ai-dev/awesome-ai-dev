@@ -10,6 +10,7 @@ alwaysApply: false
 ## 特性
 
 ### 并发
+
 ```go
 // Goroutine
 go func() { ... }()
@@ -24,9 +25,10 @@ var wg sync.WaitGroup
 wg.Add(1)
 go func() { defer wg.Done(); ... }()
 wg.Wait()
-```
+```bash
 
 ### 接口
+
 ```go
 type Reader interface {
     Read(p []byte) (n int, err error)
@@ -37,9 +39,10 @@ var v interface{}
 
 // 类型断言
 v, ok := i.(string)
-```
+```bash
 
 ### 错误处理
+
 ```go
 func readFile(path string) error {
     data, err := os.ReadFile(path)
@@ -48,22 +51,24 @@ func readFile(path string) error {
     }
     return nil
 }
-```
+```bash
 
 ## 项目结构
 
-```
+```bash
 cmd/
 pkg/
 internal/
 api/
-```
+```bash
 
 ## 最佳实践
+
 1. 优先返回错误
 2. 用 context 传请求级数据
 3. 避免全局状态
 4. 接口小而精确
 
 ## 参考
+
 - `.cursor/skills/`

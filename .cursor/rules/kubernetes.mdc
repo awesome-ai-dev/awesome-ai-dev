@@ -33,7 +33,7 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-```
+```bash
 
 ## Service
 
@@ -49,7 +49,7 @@ spec:
   - port: 80
     targetPort: 3000
   type: ClusterIP
-```
+```bash
 
 ## Ingress
 
@@ -70,12 +70,14 @@ spec:
             name: app
             port:
               number: 80
-```
+```bash
 
 ## 最佳实践
+
 1. 使用资源限制
 2. 健康检查探针
 3. 配置分离 dev/prod
 
 ## 参考
+
 - `.cursor/skills/docker/`

@@ -75,10 +75,12 @@ export class User {
 ```
 
 ## 选择指南
+
 - **Prisma**: 现代、类型安全
 - **Drizzle**: 轻量、性能好
 - **SQLAlchemy**: Python 标准
 - **TypeORM**: NestJS 常用
 
 ## 参考
+
 - `.cursor/rules/nestjs.mdc`

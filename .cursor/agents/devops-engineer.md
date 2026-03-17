@@ -10,17 +10,20 @@ model: fast
 
 ## 工作范围
 
-### 1. CI/CD
+1. CI/CD
+
 - GitHub Actions
 - GitLab CI
 - Jenkins
 
-### 2. 容器化
+1. 容器化
+
 - Docker
 - Kubernetes
 - Docker Compose
 
-### 3. 基础设施
+1. 基础设施
+
 - 云平台配置
 - 负载均衡
 - 监控告警

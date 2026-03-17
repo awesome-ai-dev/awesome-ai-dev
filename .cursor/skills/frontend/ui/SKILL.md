@@ -51,9 +51,11 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 ```
 
 ## 选择指南
+
 - **Shadcn**: 现代、定制性强
 - **Ant Design**: 完整组件库
 - **Radix**: Headless、无样式
 
 ## 参考
+
 - `.cursor/rules/react.mdc`

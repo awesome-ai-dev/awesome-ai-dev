@@ -13,6 +13,7 @@
 ## Zustand 最佳实践
 
 ### Store 分离
+
 ```typescript
 // stores/userStore.ts
 export const useUserStore = create<UserState>((set) => ({
@@ -28,6 +29,7 @@ export const useUIStore = create<UIState>((set) => ({
 ```
 
 ### 持久化
+
 ```typescript
 import { persist } from 'zustand/middleware';
 
@@ -42,6 +44,7 @@ export const useStore = create(
 ## TanStack Query 最佳实践
 
 ### 预获取
+
 ```typescript
 const prefetchUser = async () => {
   await queryClient.prefetchQuery({
@@ -52,6 +55,7 @@ const prefetchUser = async () => {
 ```
 
 ### 乐观更新
+
 ```typescript
 const mutation = useMutation({
   mutationFn: updateUser,
@@ -67,6 +71,7 @@ const mutation = useMutation({
 ## 性能优化
 
 1. **选择器**: 只订阅需要的字段
+
 ```typescript
 // ❌ 整 state 订阅
 const { count } = useStore();
@@ -75,7 +80,7 @@ const { count } = useStore();
 const count = useStore((state) => state.count);
 ```
 
-2. **分离 Store**: 按功能模块化
-3. **计算属性**: 用 computed 缓存
+1. **分离 Store**: 按功能模块化
+2. **计算属性**: 用 computed 缓存
 
 ---

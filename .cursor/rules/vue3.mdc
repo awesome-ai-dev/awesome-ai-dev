@@ -10,6 +10,7 @@ alwaysApply: false
 ## Composition API
 
 ### defineOptions
+
 ```typescript
 <script setup lang="ts">
 defineOptions({
@@ -17,9 +18,10 @@ defineOptions({
   inheritAttrs: false,
 });
 </script>
-```
+```bash
 
 ### TypedDefineProps
+
 ```typescript
 <script setup lang="ts">
 interface User {
@@ -32,9 +34,10 @@ const props = defineProps<{
   active?: boolean;
 }>();
 </script>
-```
+```bash
 
 ### Generic Components
+
 ```typescript
 <script setup lang="ts" generic="T extends { id: number }">
 defineProps<{
@@ -45,9 +48,10 @@ const emit = defineEmits<{
   select: [item: T];
 }>();
 </script>
-```
+```bash
 
 ### setup 语法糖
+
 ```vue
 <script setup lang="ts">
 const count = ref(0);
@@ -61,9 +65,10 @@ onMounted(() => {
   console.log('mounted');
 });
 </script>
-```
+```bash
 
 ### 响应式 API
+
 ```typescript
 const count = ref(0);
 const state = reactive({ user: null, loading: false });
@@ -72,7 +77,7 @@ const filtered = computed(() => list.value.filter(item => item.active));
 watch(() => props.id, (newId) => {
   fetchUser(newId);
 });
-```
+```bash
 
 ## 状态管理 (Pinia)
 
@@ -94,7 +99,7 @@ export const useUserStore = defineStore('user', () => {
   
   return { user, loading, fetchUser };
 });
-```
+```bash
 
 ## VueUse
 
@@ -109,9 +114,10 @@ import {
 
 const storage = useLocalStorage('theme', 'dark');
 const { copy, pasted } = useClipboard();
-```
+```bash
 
 ## 最佳实践
+
 1. 使用 `<script setup>` 语法糖
 2. 组件名用 PascalCase
 3. v-for 必加 key
@@ -119,4 +125,5 @@ const { copy, pasted } = useClipboard();
 5. 用 VueUse 简化逻辑
 
 ## 参考
+
 - 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`

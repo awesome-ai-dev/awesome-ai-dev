@@ -17,6 +17,7 @@ description: Docker 专家 - Dockerfile/镜像优化/Compose/Kubernetes
 ## 核心技能
 
 ### Dockerfile 最佳实践
+
 ```dockerfile
 # 多阶段构建
 FROM node:20-alpine AS builder
@@ -35,6 +36,7 @@ CMD ["node", "dist/index.js"]
 ```
 
 ### Docker Compose
+
 ```yaml
 version: '3.8'
 services:

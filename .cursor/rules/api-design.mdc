@@ -10,24 +10,27 @@ alwaysApply: false
 ## RESTful
 
 ### 资源命名
-```
+
+```bash
 GET    /users          # 列表
 POST   /users          # 创建
 GET    /users/:id      # 详情
 PUT    /users/:id      # 更新
 DELETE /users/:id      # 删除
-```
+```bash
 
 ### 响应格式
+
 ```json
 {
   "data": { "id": 1, "name": "John" },
   "meta": { "page": 1, "total": 100 }
 }
-```
+```bash
 
 ### 状态码
-```
+
+```bash
 200 OK
 201 Created
 204 No Content
@@ -36,11 +39,12 @@ DELETE /users/:id      # 删除
 403 Forbidden
 404 Not Found
 500 Internal Server Error
-```
+```bash
 
 ## GraphQL
 
 ### Schema
+
 ```graphql
 type User {
   id: ID!
@@ -56,27 +60,31 @@ type Query {
 type Mutation {
   createUser(input: CreateUserInput!): User!
 }
-```
+```bash
 
 ## 版本控制
 
 ### URL 版本
-```
+
+```bash
 /api/v1/users
 /api/v2/users
-```
+```bash
 
 ### Header 版本
-```
+
+```bash
 Accept: application/vnd.myapp.v2+json
-```
+```bash
 
 ## 最佳实践
+
 1. 使用名词复数
 2. 过滤/分页/排序
 3. 错误信息清晰
 4. API 文档完善
 
 ## 参考
+
 - `.cursor/rules/nestjs.mdc`
 - `.cursor/rules/python-fastapi.mdc`

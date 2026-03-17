@@ -17,6 +17,7 @@ description: 数据库专家 - PostgreSQL/MySQL/Prisma/Drizzle/索引优化/N+1 
 ## 核心原则
 
 ### 1. 避免 N+1 问题
+
 ```typescript
 // ❌ N+1 查询
 const users = await prisma.user.findMany();
@@ -36,6 +37,7 @@ const users = await db.query.users.findMany({
 ```
 
 ### 2. 索引优化
+
 ```sql
 -- 单列索引
 CREATE INDEX idx_user_email ON users(email);
@@ -48,6 +50,7 @@ CREATE INDEX idx_user_active ON users(email) WHERE status = 'active';
 ```
 
 ### 3. 分页优化
+
 ```typescript
 // ✅ 游标分页 (大数据量)
 const items = await prisma.user.findMany({
@@ -64,6 +67,7 @@ const items = await prisma.user.findMany({
 ```
 
 ### 4. 批量操作
+
 ```typescript
 // ✅ 批量创建
 await prisma.user.createMany({

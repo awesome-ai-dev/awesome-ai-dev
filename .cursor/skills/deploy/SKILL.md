@@ -17,6 +17,7 @@ description: 部署专家 - CI/CD/服务器/云平台/自动化部署
 ## 核心技能
 
 ### GitHub Actions
+
 ```yaml
 name: Deploy
 on:
@@ -40,6 +41,7 @@ jobs:
 ```
 
 ### PM2 部署
+
 ```bash
 # 启动应用
 pm2 start ecosystem.config.js
@@ -52,6 +54,7 @@ pm2 reload api
 ```
 
 ### Nginx 配置
+
 ```nginx
 server {
     listen 80;

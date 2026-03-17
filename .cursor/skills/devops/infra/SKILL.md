@@ -76,10 +76,12 @@ aws lambda create-function --function-name my-func \
 ```
 
 ## 最佳实践
+
 1. IaC 版本控制
 2. 环境分离
 3. 敏感信息管理
 4. 状态备份
 
 ## 参考
+
 - `.cursor/rules/dockerfile.mdc`

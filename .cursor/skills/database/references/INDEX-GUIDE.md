@@ -19,6 +19,7 @@
 ### 1. B-Tree 索引（默认）
 
 适用于：
+
 - 等值查询：`WHERE email = 'xxx'`
 - 范围查询：`WHERE age > 18`
 - 排序：`ORDER BY created_at`

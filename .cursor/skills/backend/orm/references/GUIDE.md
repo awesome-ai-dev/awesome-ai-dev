@@ -3,6 +3,7 @@
 ## Prisma Schema 最佳实践
 
 ### 关系
+
 ```prisma
 model User {
   id    String  @id @default(uuid())
@@ -17,6 +18,7 @@ model Post {
 ```
 
 ### 索引
+
 ```prisma
 model User {
   email  String @unique
@@ -27,6 +29,7 @@ model User {
 ```
 
 ### 软删除
+
 ```prisma
 model User {
   deletedAt DateTime?
@@ -50,6 +53,7 @@ export type User = typeof users.$inferSelect;
 ## 性能优化
 
 ### 1. 避免 N+1
+
 ```typescript
 // ❌ N+1
 const users = await prisma.user.findMany();
@@ -64,6 +68,7 @@ const users = await prisma.user.findMany({
 ```
 
 ### 2. 选择字段
+
 ```typescript
 // ❌ 查询所有
 const users = await prisma.user.findMany();
@@ -75,6 +80,7 @@ const users = await prisma.user.findMany({
 ```
 
 ### 3. 分页
+
 ```typescript
 const users = await prisma.user.findMany({
   skip: (page - 1) * pageSize,
@@ -84,6 +90,7 @@ const users = await prisma.user.findMany({
 ```
 
 ## 迁移策略
+
 1. 开发环境: prisma migrate dev
 2. 生产环境: prisma migrate deploy
 3. 紧急修复: prisma db push (仅开发)

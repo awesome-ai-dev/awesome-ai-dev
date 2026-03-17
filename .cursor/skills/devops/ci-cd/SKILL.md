@@ -99,10 +99,12 @@ pipeline {
 ```
 
 ## 最佳实践
+
 1. 多环境分离
 2. 缓存依赖
 3. 失败通知
 4. 自动化回滚
 
 ## 参考
+
 - `.cursor/rules/dockerfile.mdc`

@@ -10,6 +10,7 @@ alwaysApply: false
 ## 特性
 
 ### Standalone 应用
+
 ```typescript
 import { NestFactory } from '@nestjs/core';
 import { Controller, Get, Injectable } from '@nestjs/common';
@@ -32,9 +33,10 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
-```
+```bash
 
 ### Signal-based 状态
+
 ```typescript
 import { signal, computed } from '@nestjs/core';
 
@@ -44,19 +46,20 @@ class CounterService {
   
   increment() { this.count.update(c => c + 1); }
 }
-```
+```bash
 
 ### 依赖注入
+
 ```typescript
 @Controller('users')
 export class UserController {
   constructor(private userService: UserService) {}
 }
-```
+```bash
 
 ## 模块结构
 
-```
+```bash
 src/
 ├── controllers/
 ├── services/
@@ -65,9 +68,10 @@ src/
 ├── entities/
 ├── guards/
 └── filters/
-```
+```bash
 
 ## 控制器
+
 ```typescript
 @Controller('users')
 export class UserController {
@@ -82,13 +86,15 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 }
-```
+```bash
 
 ## 最佳实践
+
 1. 控制器只做参数解析
 2. 业务逻辑放服务层
 3. 用 DTO + class-validator 验证
 4. 用 Interceptor 统一响应格式
 
 ## 参考
+
 - 详细: `.cursor/skills/code-review/references/`

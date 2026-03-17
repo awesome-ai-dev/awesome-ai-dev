@@ -23,7 +23,7 @@ describe('UserService', () => {
     expect(mockRepo).toHaveBeenCalled();
   });
 });
-```
+```bash
 
 ## React Testing Library
 
@@ -39,7 +39,7 @@ test('should submit form', async () => {
   
   expect(fn).toHaveBeenCalledWith({ name: 'John' });
 });
-```
+```bash
 
 ## Playwright
 
@@ -54,13 +54,15 @@ test('login flow', async ({ page }) => {
   
   await expect(page).toHaveURL('/dashboard');
 });
-```
+```bash
 
 ## 最佳实践
+
 1. AAA 模式 (Arrange-Act-Assert)
 2. 测试名称描述行为
 3. Mock 外部依赖
 4. 覆盖率目标 80%+
 
 ## 参考
+
 - `.cursor/skills/testing/`

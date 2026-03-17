@@ -10,15 +10,17 @@ alwaysApply: false
 ## 类型定义
 
 ### 基础类型
+
 ```typescript
 let name: string = 'test';
 let num: number = 1;
 let bool: boolean = true;
 let arr: string[] = ['a', 'b'];
 let obj: Record<string, any> = {};
-```
+```bash
 
 ### 接口 vs 类型
+
 ```typescript
 // 接口 - 可扩展
 interface User {
@@ -29,9 +31,10 @@ interface User {
 // 类型 - 联合/交叉
 type Status = 'active' | 'inactive';
 type UserWithRole = User & { role: string };
-```
+```bash
 
 ### 泛型
+
 ```typescript
 function identity<T>(arg: T): T {
   return arg;
@@ -41,7 +44,7 @@ interface ApiResponse<T> {
   data: T;
   status: number;
 }
-```
+```bash
 
 ## Utility Types
 
@@ -58,14 +61,16 @@ type ReadonlyUser = Readonly<User>;
 // Pick / Omit
 type UserPreview = Pick<User, 'id' | 'name'>;
 type NoPassword = Omit<User, 'password'>;
-```
+```bash
 
 ## 最佳实践
+
 1. 启用 strict 模式
 2. 避免 any，用 unknown
 3. 优先使用类型推断
 4. 善用 utility types
 
 ## 参考
+
 - `.cursor/rules/react.mdc`
 - `.cursor/rules/vue3.mdc`

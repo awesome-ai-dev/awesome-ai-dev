@@ -95,10 +95,12 @@ for await (const chunk of stream) {
 ```
 
 ## 最佳实践
+
 1. 控制上下文长度
 2. 流式输出体验好
 3. 错误处理
 4. 成本控制
 
 ## 参考
+
 - `ai-tools/08-ai-platforms-api.md`

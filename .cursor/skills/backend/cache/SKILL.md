@@ -8,6 +8,7 @@ description: 缓存策略 - Redis/Memcached/本地缓存
 ## Redis
 
 ### 基础操作
+
 ```typescript
 import Redis from 'ioredis';
 
@@ -50,7 +51,7 @@ async function updateUser(id: string, data: User) {
 }
 ```
 
-## 缓存策略
+## 缓存策略详解
 
 | 策略 | 适用场景 |
 |------|----------|
@@ -75,10 +76,12 @@ async function withLock(key: string, fn: () => Promise<T>) {
 ```
 
 ## 最佳实践
+
 1. 合理设置 TTL
 2. 缓存穿透防护
 3. 缓存雪崩处理
 4. 热点数据预热
 
 ## 参考
+
 - `.cursor/rules/nestjs.mdc`

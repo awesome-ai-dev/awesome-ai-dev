@@ -26,7 +26,7 @@ COPY --from=builder /app/node_modules ./node_modules
 USER node
 EXPOSE 3000
 CMD ["node", "dist/index.js"]
-```
+```bash
 
 ## 镜像优化
 
@@ -46,7 +46,8 @@ USER appuser
 # 只读文件系统
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates && rm -rf /var/lib/apt/lists/*
-```
+```bash
 
 ## 参考
+
 - `.cursor/skills/docker/`

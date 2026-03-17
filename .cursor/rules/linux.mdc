@@ -10,6 +10,7 @@ alwaysApply: false
 ## 常用命令
 
 ### 文件操作
+
 ```bash
 # 查找
 find . -name "*.ts" -type f
@@ -22,9 +23,10 @@ tar -xzvf archive.tar.gz
 # 权限
 chmod +x script.sh
 chown user:group file
-```
+```bash
 
 ### 系统管理
+
 ```bash
 # 进程
 ps aux | grep node
@@ -38,7 +40,7 @@ ss -tulpn | grep LISTEN
 # 磁盘
 df -h
 du -sh directory/
-```
+```bash
 
 ## Shell 脚本
 
@@ -66,7 +68,7 @@ function greet() {
     echo "Hello $1"
 }
 greet "World"
-```
+```bash
 
 ## Docker 命令
 
@@ -82,13 +84,15 @@ docker logs -f container
 
 # 清理
 docker system prune -a
-```
+```bash
 
 ## 最佳实践
+
 1. 脚本加 shebang
 2. 错误时退出 set -e
 3. 变量加引号
 4. 注释关键逻辑
 
 ## 参考
+
 - `.cursor/skills/devops/`

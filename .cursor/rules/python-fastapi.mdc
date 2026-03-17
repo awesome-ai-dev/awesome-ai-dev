@@ -10,6 +10,7 @@ alwaysApply: false
 ## Pydantic v2
 
 ### 类型提示
+
 ```python
 from pydantic import BaseModel, EmailStr, Field
 
@@ -20,9 +21,10 @@ class User(BaseModel):
     role: str = 'user'
     
     model_config = {'str_strip_whitespace': True}
-```
+```bash
 
 ### 验证器
+
 ```python
 from pydantic import field_validator
 
@@ -35,9 +37,10 @@ class User(BaseModel):
         if len(v) < 8:
             raise ValueError('密码至少8位')
         return v
-```
+```bash
 
 ### 依赖注入
+
 ```python
 from fastapi import Depends, Request
 
@@ -47,20 +50,21 @@ async def get_current_user(request: Request, token: str = Depends(oauth2_scheme)
 @app.get('/users/me')
 async def read_users(current_user = Depends(get_current_user)):
     return current_user
-```
+```bash
 
 ## 项目结构
 
-```
+```bash
 app/
 ├── api/
 ├── models/
 ├── schemas/
 ├── services/
 └── main.py
-```
+```bash
 
 ## 路由
+
 ```python
 from fastapi import APIRouter, Depends, Query
 
@@ -75,7 +79,7 @@ async def get_users(
     offset = (page - 1) * page_size
     users = await db.query(User).offset(offset).limit(page_size).all()
     return {'data': users, 'page': page}
-```
+```bash
 
 ## 数据库 (SQLAlchemy 2.0)
 
@@ -89,13 +93,15 @@ class UserRepository:
             select(User).where(User.email == email)
         )
         return result.scalar_one_or_none()
-```
+```bash
 
 ## 最佳实践
+
 1. 使用 Pydantic v2 验证
 2. 异步 SQLAlchemy 2.0
 3. 依赖注入管理数据库
 4. 统一错误响应
 
 ## 参考
+
 - 详细: `.cursor/skills/code-review/references/`

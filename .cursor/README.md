@@ -4,7 +4,7 @@
 
 ## 目录结构
 
-```
+```text
 .cursor/
 ├── rules/          # 开发规范
 │   ├── frontend/   # 前端规范
@@ -24,80 +24,128 @@
 ## Rules 索引
 
 ### 通用
-| 文件 | 说明 |
-|-----|------|
-| [project.mdc](rules/project.mdc) | 通用项目规范 |
 
-### 前端
 | 文件 | 说明 |
-|-----|------|
-| [react.mdc](rules/react.mdc) | React 19 |
-| [vue3.mdc](rules/vue3.mdc) | Vue 3 |
-| [nextjs.mdc](rules/nextjs.mdc) | Next.js |
-| [frontend/typescript.mdc](rules/frontend/typescript.mdc) | TypeScript |
+|------|------|
+| project.mdc | 通用项目规范 |
 
-### 后端
-| 文件 | 说明 |
-|-----|------|
-| [nestjs.mdc](rules/nestjs.mdc) | NestJS |
-| [python-fastapi.mdc](rules/python-fastapi.mdc) | FastAPI |
-| [go.mdc](rules/go.mdc) | Go |
-| [mongodb.mdc](rules/mongodb.mdc) | MongoDB |
+### 前端规范
 
-### DevOps
 | 文件 | 说明 |
-|-----|------|
-| [dockerfile.mdc](rules/dockerfile.mdc) | Docker |
-| [kubernetes.mdc](rules/kubernetes.mdc) | Kubernetes |
+|------|------|
+| react.mdc | React 19 |
+| vue3.mdc | Vue 3 |
+| nextjs.mdc | Next.js |
+| frontend/typescript.mdc | TypeScript |
 
-### AI
+### 后端规范
+
 | 文件 | 说明 |
-|-----|------|
-| [python-data.mdc](rules/python-data.mdc) | Python 数据科学 |
-| [rust.mdc](rules/rust.mdc) | Rust |
+|------|------|
+| nestjs.mdc | NestJS |
+| python-fastapi.mdc | FastAPI |
+| go.mdc | Go |
+| mongodb.mdc | MongoDB |
+
+### DevOps 规范
+
+| 文件 | 说明 |
+|------|------|
+| dockerfile.mdc | Docker |
+| kubernetes.mdc | Kubernetes |
+
+### AI 规范
+
+| 文件 | 说明 |
+|------|------|
+| python-data.mdc | Python 数据科学 |
+| rust.mdc | Rust |
 
 ## Skills 索引
 
-### 前端
-| 技能 | 说明 |
-|-----|------|
-| [frontend/state](skills/frontend/state/) | 状态管理 |
-| [frontend/ui](skills/frontend/ui/) | UI 组件库 |
-| [frontend/css](skills/frontend/css/) | CSS 框架 |
+### 前端技能
 
-### 后端
 | 技能 | 说明 |
-|-----|------|
-| [backend/auth](skills/backend/auth/) | 认证授权 |
-| [backend/orm](skills/backend/orm/) | ORM 使用 |
-| [backend/cache](skills/backend/cache/) | 缓存策略 |
+|------|------|
+| frontend/state | 状态管理 |
+| frontend/ui | UI 组件库 |
+| frontend/css | CSS 框架 |
 
-### DevOps
-| 技能 | 说明 |
-|-----|------|
-| [devops/ci-cd](skills/devops/ci-cd/) | CI/CD 流水线 |
-| [devops/monitoring](skills/devops/monitoring/) | 监控告警 |
-| [devops/infra](skills/devops/infra/) | 基础设施 |
+### 后端技能
 
-### AI
 | 技能 | 说明 |
-|-----|------|
-| [ai/llm](skills/ai/llm/) | LLM 应用 |
-| [ai/rag](skills/ai/rag/) | RAG 系统 |
-| [ai/agent](skills/ai/agent/) | AI Agent |
+|------|------|
+| backend/auth | 认证授权 |
+| backend/orm | ORM 使用 |
+| backend/cache | 缓存策略 |
+
+### DevOps 技能
+
+| 技能 | 说明 |
+|------|------|
+| devops/ci-cd | CI/CD 流水线 |
+| devops/monitoring | 监控告警 |
+| devops/infra | 基础设施 |
+
+### AI 技能
+
+| 技能 | 说明 |
+|------|------|
+| ai/llm | LLM 应用开发 |
+| ai/rag | RAG 系统 |
+| ai/agent | Agent 开发 |
+
+### 专项技能
+
+| 技能 | 说明 |
+|------|------|
+| database | 数据库优化 |
+| testing | 测试工程 |
+| security | 安全加固 |
+| performance | 性能优化 |
+| code-review | 代码审查 |
+| docker | Docker 容器化 |
+| deploy | 应用部署 |
+| mobile | 移动端开发 |
+
+## Agents 索引
+
+| Agent | 说明 |
+|-------|------|
+| architect | 架构师 |
+| fullstack-developer | 全栈开发 |
+| backend-developer | 后端开发 |
+| frontend-developer | 前端开发 |
+| devops-engineer | DevOps 工程师 |
+| data-engineer | 数据工程师 |
+| security-expert | 安全专家 |
+| test-engineer | 测试工程师 |
+| code-reviewer | 代码审查员 |
+| bug-hunter | Bug 追踪 |
+| refactor | 重构专家 |
+| debugger | 调试专家 |
+| database-administrator | 数据库管理员 |
+| product-manager | 产品经理 |
+| technical-writer | 技术文档 |
+| ui-designer | UI 设计师 |
+
+## 使用方式
+
+```bash
+# 在 Cursor 中引用
+@.cursor/rules/react      # 使用 React 规范
+@.cursor/skills/database # 使用数据库技能
+@.cursor/agents/architect # 调用架构师代理
+```
 
 ---
 
-## 快速使用
+## 配置文件说明
 
-```markdown
-# Rules
-@react         # React 规范
-@nestjs        # NestJS 规范
-@python-fastapi # FastAPI 规范
+### mcp.json
 
-# Skills
-/skill frontend-state   # 状态管理
-/skill backend-auth     # 认证授权
-/skill ai-llm          # LLM 应用
-```
+MCP (Model Context Protocol) 服务器配置，支持多种工具集成。
+
+### hooks.json
+
+Git 钩子配置，支持提交前检查、代码格式化等。

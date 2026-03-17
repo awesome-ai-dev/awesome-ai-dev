@@ -181,14 +181,17 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 
 ```
 ai-tools/
-├── 01-development-tools.md   # 开发工具
-├── 02-design-creative.md     # 设计创意
-├── 03-writing-content.md     # 写作内容
-├── 04-productivity.md        # 效率工具
-├── 05-audio-video.md        # 音视频
-├── 06-global-saas.md        # 全球 SaaS
-├── 08-ai-platforms-api.md   # AI 平台
-└── 11-china-ai-tools.md     # 中国 AI 工具
+├── 索引.md              # 工具索引
+├── 开发工具.md          # 开发工具
+├── 设计创意.md          # 设计创意
+├── 写作内容.md          # 写作内容
+├── 效率工具.md          # 效率工具
+├── 音视频.md           # 音视频
+├── 全球SaaS.md         # 全球 SaaS
+├── AI平台API.md         # AI 平台
+├── 垂直行业.md          # 垂直行业
+├── 创业想法.md          # 创业想法
+└── 国内AI工具.md        # 中国 AI 工具
 ```
 
 **涵盖类别：**
@@ -205,28 +208,29 @@ ai-tools/
 
 ```
 prompts/
-├── 01-project-init.md       # 项目初始化
-├── 02-ui-design.md          # UI 设计
-├── 03-bug-fix.md           # Bug 修复
-├── 04-code-generation.md    # 代码生成
-├── 05-refactor-optimize.md  # 重构优化
-├── 06-unit-testing.md       # 单元测试
-├── 07-devops.md             # DevOps
-├── 08-backend.md            # 后端开发
-├── 09-security.md           # 安全认证
-├── 10-performance.md        # 性能优化
-├── 11-testing.md            # 测试工程
-├── 12-code-review.md        # 代码审查
-├── 13-documentation.md      # 文档生成
-├── 14-data-analysis.md      # 数据分析
-└── 15-ai-app.md            # AI 应用
+├── 索引.md               # 提示词索引
+├── 项目初始化.md         # 项目初始化
+├── UI设计.md            # UI 设计
+├── Bug修复.md           # Bug 修复
+├── 代码生成.md          # 代码生成
+├── 重构优化.md          # 重构优化
+├── 单元测试.md          # 单元测试
+├── DevOps.md            # DevOps
+├── 后端开发.md          # 后端开发
+├── 安全认证.md          # 安全认证
+├── 性能优化.md          # 性能优化
+├── 测试工程.md          # 测试工程
+├── 代码审查.md          # 代码审查
+├── 文档生成.md          # 文档生成
+├── 数据分析.md          # 数据分析
+└── AI应用.md            # AI 应用
 ```
 
 **使用方式：**
 
 ```markdown
-@prompts/01-project-init  # 初始化项目
-@prompts/15-ai-app        # AI 应用开发
+@prompts/项目初始化  # 初始化项目
+@prompts/AI应用     # AI 应用开发
 ```
 
 ---

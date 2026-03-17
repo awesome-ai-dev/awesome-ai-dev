@@ -2,15 +2,18 @@
 
 ## 1. A01:2021 - 访问控制失效 (Broken Access Control)
 
-### 描述
+### 1.1 描述
+
 用户能够超出其权限范围执行操作。访问控制依赖于用户身份和权限的强制执行。
 
-### 常见漏洞
+### 1.2 常见漏洞
+
 - 未验证用户身份
 - 水平越权（访问其他用户资源）
 - 垂直越权（普通用户执行管理员操作）
 
-### 防御措施
+### 1.3 防御措施
+
 ```typescript
 // ❌ 不安全的实现
 app.get('/api/users/:id', (req, res) => {
@@ -32,15 +35,18 @@ app.get('/api/users/:id', authenticate, (req, res) => {
 
 ## 2. A02:2021 - 加密失败 (Cryptographic Failures)
 
-### 描述
+### 2.1 描述
+
 未正确加密敏感数据或使用弱加密算法。
 
-### 常见漏洞
+### 2.2 常见漏洞
+
 - 使用弱加密算法（MD5、SHA1）
 - 未加密敏感数据
 - 密钥管理不当
 
-### 防御措施
+### 2.3 防御措施
+
 ```typescript
 // ✅ 使用强加密算法
 import bcrypt from 'bcrypt';
@@ -66,16 +72,19 @@ const encrypt = (text: string, key: string): string => {
 
 ## 3. A03:2021 - 注入 (Injection)
 
-### 描述
+### 3.1 描述
+
 应用程序将不可信数据作为命令或查询的一部分发送给解释器。
 
-### 常见漏洞
+### 3.2 常见漏洞
+
 - SQL 注入
 - NoSQL 注入
 - 命令注入
 - LDAP 注入
 
-### 防御措施
+### 3.3 防御措施
+
 ```typescript
 // ❌ SQL 注入漏洞
 const query = `SELECT * FROM users WHERE email = '${email}'`;
@@ -94,10 +103,18 @@ const user = await prisma.user.findUnique({
 
 ## 4. A04:2021 - 不安全设计 (Insecure Design)
 
-### 描述
+### 4.1 描述
+
 应用程序架构和设计层面的安全缺陷。
 
-### 防御措施
+### 4.2 常见漏洞
+
+- 缺少安全架构
+- 业务逻辑漏洞
+- 加密密钥硬编码
+
+### 4.3 防御措施
+
 - 威胁建模
 - 安全设计模式
 - 单元测试安全逻辑
@@ -106,16 +123,19 @@ const user = await prisma.user.findUnique({
 
 ## 5. A05:2021 - 安全配置错误 (Security Misconfiguration)
 
-### 描述
+### 5.1 描述
+
 系统、框架、应用的不安全默认配置。
 
-### 常见问题
+### 5.2 常见问题
+
 - 错误页面泄露敏感信息
 - 开启调试模式
 - 使用默认凭据
 - CORS 配置不当
 
-### 防御措施
+### 5.3 防御措施
+
 ```typescript
 // ✅ 安全的 CORS 配置
 app.use(cors({
@@ -140,10 +160,18 @@ app.use((err, req, res, next) => {
 
 ## 6. A06:2021 - 危险组件 (Vulnerable Components)
 
-### 描述
+### 6.1 描述
+
 使用的库、框架、组件存在已知漏洞。
 
-### 防御措施
+### 6.2 常见漏洞
+
+- 使用有漏洞的依赖
+- 未更新组件
+- 停止维护的组件
+
+### 6.3 防御措施
+
 ```bash
 # 定期审计依赖
 npm audit
@@ -160,15 +188,18 @@ npm shrinkwrap
 
 ## 7. A07:2021 - 身份认证失败 (Identification and Authentication Failures)
 
-### 描述
+### 7.1 描述
+
 身份验证和会话管理实现不当。
 
-### 常见问题
+### 7.2 常见问题
+
 - 弱密码策略
 - Session fixation
 - Session 泄露
 
-### 防御措施
+### 7.3 防御措施
+
 ```typescript
 // ✅ 安全的 Session 管理
 app.use(session({
@@ -209,15 +240,18 @@ async function authenticate(email, password) {
 
 ## 8. A08:2021 - 数据完整性失败 (Software and Data Integrity Failures)
 
-### 描述
+### 8.1 描述
+
 应用程序不保护数据完整性。
 
-### 常见问题
+### 8.2 常见问题
+
 - 不验证更新来源
 - 使用不安全的反序列化
 - CDN/CI 供应链攻击
 
-### 防御措施
+### 8.3 防御措施
+
 ```typescript
 // ✅ 验证数据完整性
 import crypto from 'crypto';
@@ -238,10 +272,18 @@ function verifyWebhook(payload: string, signature: string, secret: string): bool
 
 ## 9. A09:2021 - 日志和监控不足 (Security Logging and Monitoring Failures)
 
-### 描述
-不足以检测、响应和恢复入侵。
+### 9.1 描述
 
-### 防御措施
+安全事件日志和监控不足。
+
+### 9.2 常见问题
+
+- 未记录安全事件
+- 日志不完整
+- 无告警机制
+
+### 9.3 防御措施
+
 ```typescript
 // ✅ 关键操作日志
 app.post('/api/transfer', authenticate, async (req, res) => {
@@ -272,10 +314,17 @@ app.post('/api/transfer', authenticate, async (req, res) => {
 
 ## 10. A10:2021 - 服务端请求伪造 (SSRF)
 
-### 描述
+### 10.1 描述
+
 应用程序从用户控制的 URL 获取资源而未验证。
 
-### 防御措施
+### 10.2 常见漏洞
+
+- 未验证用户输入的 URL
+- 云服务元数据泄露
+
+### 10.3 防御措施
+
 ```typescript
 // ❌ 存在 SSRF 漏洞
 app.get('/proxy', async (req, res) => {

@@ -57,9 +57,11 @@ function UserList() {
 ```
 
 ## 选择指南
+
 - **Zustand**: 简单、轻量
 - **Jotai**: 原子化、适合复杂状态
 - **TanStack Query**: 服务端状态、缓存
 
 ## 参考
+
 - `.cursor/rules/react.mdc`

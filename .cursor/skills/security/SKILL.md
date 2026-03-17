@@ -18,6 +18,7 @@ description: 安全专家 - OWASP Top 10/身份验证/授权/加密/安全 Heade
 ## 核心原则
 
 ### 1. 身份验证
+
 ```typescript
 // JWT 最佳实践
 const token = jwt.sign(
@@ -38,6 +39,7 @@ const refreshToken = jwt.sign(
 ```
 
 ### 2. 授权
+
 ```typescript
 // RBAC 装饰器
 @RequireRoles('admin')
@@ -55,6 +57,7 @@ async function updatePost(userId: string, postId: string) {
 ```
 
 ### 3. 安全 Headers
+
 ```typescript
 // Helmet.js
 app.use(helmet({
@@ -70,6 +73,7 @@ app.use(helmet({
 ```
 
 ### 4. 依赖安全
+
 ```bash
 # 定期审计
 npm audit

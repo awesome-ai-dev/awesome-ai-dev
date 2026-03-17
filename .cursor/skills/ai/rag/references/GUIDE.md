@@ -2,7 +2,7 @@
 
 ## 架构概览
 
-```
+```markdown
 ┌─────────────┐     ┌──────────────┐     ┌─────────┐
 │   文档      │ ──▶ │  向量化      │ ──▶ │ 向量库  │
 └─────────────┘     └──────────────┘     └─────────┘
@@ -11,7 +11,7 @@
 │   用户查询  │ ──▶ │  向量化      │ ◀── ┌─────────┐
 └─────────────┘     └──────────────┘     │ LLM    │
                                           └─────────┘
-```
+```markdown
 
 ## 向量数据库选择
 
@@ -26,13 +26,15 @@
 ## 文档处理
 
 ### 加载器
+
 ```typescript
 import { PDFLoader } from 'langchain/document_loaders';
 import { DocxLoader } from 'langchain/document_loaders';
 import { CSVLoader } from 'langchain/document_loaders';
-```
+```markdown
 
 ### 分割策略
+
 ```typescript
 // 通用分割
 const splitter = new RecursiveCharacterTextSplitter({
@@ -50,32 +52,35 @@ const mdSplitter = new MarkdownTextSplitter({
 const codeSplitter = new LanguageSplitter(
   LanguageSplitter.JavaScriptSplitter
 );
-```
+```markdown
 
 ## 检索优化
 
 ### 1. Hybrid Search
+
 ```typescript
 // 关键词 + 语义
 const results = await hybridSearch(query, {
   keywordWeight: 0.3,
   semanticWeight: 0.7
 });
-```
+```markdown
 
 ### 2. Re-ranking
+
 ```typescript
 import { CohereRerank } from 'langchain/cohere-rerank';
 
 const reranker = new CohereRerank();
 const reranked = await reranker.rerank(results, query, { topK: 5 });
-```
+```markdown
 
 ### 3. 缓存
+
 ```typescript
 const cache = new InMemoryCache();
 const results = await cache.get(query) || await vectorStore.similaritySearch(query);
-```
+```markdown
 
 ## 最佳实践
 

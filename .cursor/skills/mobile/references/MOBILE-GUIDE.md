@@ -3,6 +3,7 @@
 ## React Native (Expo)
 
 ### 路由配置
+
 ```typescript
 // app/_layout.tsx
 import { Stack } from 'expo-router';
@@ -18,6 +19,7 @@ export default function Layout() {
 ```
 
 ### 状态管理
+
 ```typescript
 // zustand store
 import { create } from 'zustand';
@@ -34,6 +36,7 @@ export const useUserStore = create<UserState>((set) => ({
 ```
 
 ### 原生模块
+
 ```typescript
 // 使用原生能力
 import * as Location from 'expo-location';
@@ -44,6 +47,7 @@ import { CameraView } from 'expo-camera';
 ## Flutter
 
 ### 状态管理 (Riverpod)
+
 ```dart
 // Provider
 final userProvider = StateNotifierProvider<UserNotifier, User?>((ref) {
@@ -60,6 +64,7 @@ class UserNotifier extends StateNotifier<User?> {
 ```
 
 ### Widget
+
 ```dart
 class MyWidget extends StatelessWidget {
   @override
@@ -76,6 +81,7 @@ class MyWidget extends StatelessWidget {
 ## 发布
 
 ### iOS
+
 ```bash
 # Expo
 eas build -p ios
@@ -85,6 +91,7 @@ xcodebuild -workspace ios/MyApp.xcworkspace
 ```
 
 ### Android
+
 ```bash
 # Expo
 eas build -p android

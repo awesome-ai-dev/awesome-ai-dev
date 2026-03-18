@@ -299,8 +299,10 @@ A: 欢迎提交 PR 补充新的规范、技能、代理、提示词或工具。�
 
 ### 联系方式
 
-- 提交 Issue: https://github.com/[你的GitHub用户名]/awesome-ai-development/issues
-- 提交 PR: https://github.com/[你的GitHub用户名]/awesome-ai-development/pulls
+- Gitee: https://gitee.com/awesome-ai-dev/awesome-ai-dev
+- GitHub: https://github.com/awesome-ai-dev/awesome-ai-dev
+- 提交 Issue: https://github.com/awesome-ai-dev/awesome-ai-dev/issues
+- 提交 PR: https://github.com/awesome-ai-dev/awesome-ai-dev/pulls
 
 ---
 

@@ -132,8 +132,9 @@ Closes #123
 
 ## 联系方式
 
-- GitHub Issues: https://github.com/[你的GitHub用户名]/awesome-ai-development/issues
-- 提交 PR: https://github.com/[你的GitHub用户名]/awesome-ai-development/pulls
+- Gitee Issues: https://gitee.com/awesome-ai-dev/awesome-ai-dev/issues
+- GitHub Issues: https://github.com/awesome-ai-dev/awesome-ai-dev/issues
+- 提交 PR: https://gitee.com/awesome-ai-dev/awesome-ai-dev/pulls
 
 ---
 

@@ -24,7 +24,7 @@
     "exp": 1516242622
   }
 }
-```markdown
+```
 
 ### 安全建议
 
@@ -43,7 +43,7 @@ const permissions = {
   user: ['read', 'write'],
   guest: ['read']
 };
-```markdown
+```
 
 ### ABAC (基于属性)
 
@@ -53,7 +53,7 @@ canAccess = (user, resource, action) => {
   return user.department === resource.department 
     && user.level >= resource.requiredLevel;
 }
-```markdown
+```
 
 ## 密码安全
 
@@ -64,7 +64,7 @@ import bcrypt from 'bcrypt';
 
 const hash = await bcrypt.hash(password, 10);
 const match = await bcrypt.compare(password, hash);
-```markdown
+```
 
 ### 验证规则
 
@@ -74,9 +74,9 @@ const match = await bcrypt.compare(password, hash);
 
 ## OAuth2 流程
 
-```markdown
+```text
 用户 → 授权页面 → 授权码 → 换 Access Token → 资源
-```markdown
+```
 
 ## 最佳实践
 

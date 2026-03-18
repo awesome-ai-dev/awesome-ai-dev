@@ -109,7 +109,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 
 ### 2. 使用
 
-```markdown
+```text
 # 使用规范
 @react
 帮我写个登录组件
@@ -228,7 +228,7 @@ prompts/
 
 **使用方式：**
 
-```markdown
+```text
 @prompts/项目初始化  # 初始化项目
 @prompts/AI应用     # AI 应用开发
 ```

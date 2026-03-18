@@ -18,11 +18,11 @@ description: 性能优化专家 - 前端优化/后端优化/Bundle 分析/Lighth
 
 ### 1. Core Web Vitals
 
-```markdown
+```text
 LCP (Largest Contentful Paint) - 最大内容绘制 < 2.5s
 FID (First Input Delay) - 首次输入延迟 < 100ms  
 CLS (Cumulative Layout Shift) - 累积布局偏移 < 0.1
-```markdown
+```
 
 ### 2. 前端优化
 
@@ -35,7 +35,7 @@ const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
 
 // 虚拟列表
 import { useVirtualizer } from '@tanstack/react-virtual';
-```markdown
+```
 
 ### 3. Bundle 优化
 
@@ -53,7 +53,7 @@ export default defineConfig({
     }
   }
 });
-```markdown
+```
 
 ### 4. 缓存策略
 
@@ -70,7 +70,7 @@ module.exports = {
     }
   ]
 };
-```markdown
+```
 
 ## 常用脚本
 

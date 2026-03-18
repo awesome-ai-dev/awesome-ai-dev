@@ -2,7 +2,7 @@
 
 ## NestJS 开发
 
-```markdown
+```text
 请帮我用 NestJS 实现功能：
 
 ## 需求
@@ -21,7 +21,7 @@
 
 ## FastAPI 开发
 
-```markdown
+```text
 请帮我用 FastAPI 实现功能：
 
 ## 需求
@@ -39,7 +39,7 @@
 
 ## Go 开发
 
-```markdown
+```text
 请帮我用 Go 实现功能：
 
 ## 需求

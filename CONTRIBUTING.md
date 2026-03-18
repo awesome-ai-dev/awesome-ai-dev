@@ -18,7 +18,7 @@
 
 ### 贡献流程
 
-```markdown
+```text
 1. Fork 本项目
 2. 创建分支 (git checkout -b feature/xxx)
 3. 提交更改 (git commit -m 'add: xxx')
@@ -58,7 +58,7 @@
 
 ## 项目结构
 
-```markdown
+```yaml
 ai-summary/
 ├── .cursor/          # Cursor IDE 配置
 │   ├── rules/        # 开发规范
@@ -75,7 +75,7 @@ ai-summary/
 
 ### 提交信息格式
 
-```markdown
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -95,7 +95,7 @@ ai-summary/
 
 ### 示例
 
-```markdown
+```text
 feat(rules): 添加 Flutter 开发规范
 
 添加 Flutter 3 开发规范，包含：

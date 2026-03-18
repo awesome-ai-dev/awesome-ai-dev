@@ -2,7 +2,7 @@
 
 ## React 19 开发
 
-```markdown
+```text
 请帮我用 React 19 实现功能：
 
 ## 需求
@@ -24,7 +24,7 @@
 
 ## Vue 3 开发
 
-```markdown
+```text
 请帮我用 Vue 3 实现功能：
 
 ## 需求
@@ -43,7 +43,7 @@
 
 ## Next.js 15 开发
 
-```markdown
+```text
 请帮我用 Next.js 15 App Router 实现功能：
 
 ## 需求
@@ -63,7 +63,7 @@
 
 ## 组件设计
 
-```markdown
+```text
 请帮我设计组件：
 
 ## 场景
@@ -78,7 +78,7 @@
 
 ## 状态管理
 
-```markdown
+```text
 请帮我设计状态管理方案：
 
 ## 场景

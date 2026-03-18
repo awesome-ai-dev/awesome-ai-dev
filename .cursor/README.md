@@ -116,6 +116,7 @@
 ### mcp.json
 
 MCP (Model Context Protocol) 服务器配置，支持多种工具集成：
+
 - filesystem - 文件系统
 - git - Git 操作
 - puppeteer - 浏览器自动化

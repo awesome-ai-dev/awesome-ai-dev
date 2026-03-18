@@ -2,7 +2,7 @@
 
 ## Docker 配置
 
-```markdown
+```text
 请帮我生成 Dockerfile 和 docker-compose.yml：
 
 ## 技术栈
@@ -17,7 +17,7 @@
 
 ## CI/CD 配置
 
-```markdown
+```text
 请帮我生成 GitHub Actions CI/CD 配置：
 
 ## 流程
@@ -29,7 +29,7 @@
 
 ## 环境变量
 
-```markdown
+```text
 请帮我设计环境变量配置：
 
 ## 需要的变量
@@ -40,7 +40,7 @@
 
 ## 部署脚本
 
-```markdown
+```text
 请帮我生成部署脚本：
 
 ## 目标

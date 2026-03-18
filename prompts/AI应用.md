@@ -2,7 +2,7 @@
 
 ## LLM 应用
 
-```markdown
+```text
 请帮我开发 LLM 应用：
 
 ## 需求
@@ -20,7 +20,7 @@
 
 ## RAG 系统
 
-```markdown
+```text
 请帮我实现 RAG 系统：
 
 ## 数据
@@ -35,7 +35,7 @@
 
 ## Agent 开发
 
-```markdown
+```text
 请帮我开发 AI Agent：
 
 ## 目标

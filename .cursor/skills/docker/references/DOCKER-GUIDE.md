@@ -19,12 +19,12 @@
 
 ### 4. .dockerignore
 
-```markdown
+```text
 node_modules
 .git
 *.md
 .env
-```markdown
+```text
 
 ## 安全加固
 
@@ -34,14 +34,14 @@ RUN addgroup -g 1001 appgroup && \
     adduser -u 1001 -G appgroup -s /bin/sh -D appuser
 
 USER appuser
-```markdown
+```text
 
 ## 健康检查
 
 ```dockerfile
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
-```markdown
+```text
 
 ## 常用命令
 
@@ -60,7 +60,7 @@ docker exec -it container_id sh
 
 # 清理
 docker system prune -a
-```markdown
+```text
 
 ## Docker Compose 技巧
 
@@ -74,6 +74,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-```markdown
+```text
 
 ---

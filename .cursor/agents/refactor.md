@@ -59,5 +59,3 @@ model: fast
 [重构策略]
 
 重构后代码
-
-```markdown

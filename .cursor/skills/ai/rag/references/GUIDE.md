@@ -2,7 +2,7 @@
 
 ## 架构概览
 
-```markdown
+```text
 ┌─────────────┐     ┌──────────────┐     ┌─────────┐
 │   文档      │ ──▶ │  向量化      │ ──▶ │ 向量库  │
 └─────────────┘     └──────────────┘     └─────────┘
@@ -11,7 +11,7 @@
 │   用户查询  │ ──▶ │  向量化      │ ◀── ┌─────────┐
 └─────────────┘     └──────────────┘     │ LLM    │
                                           └─────────┘
-```markdown
+```text
 
 ## 向量数据库选择
 
@@ -31,7 +31,7 @@
 import { PDFLoader } from 'langchain/document_loaders';
 import { DocxLoader } from 'langchain/document_loaders';
 import { CSVLoader } from 'langchain/document_loaders';
-```markdown
+```text
 
 ### 分割策略
 
@@ -52,7 +52,7 @@ const mdSplitter = new MarkdownTextSplitter({
 const codeSplitter = new LanguageSplitter(
   LanguageSplitter.JavaScriptSplitter
 );
-```markdown
+```text
 
 ## 检索优化
 
@@ -64,7 +64,7 @@ const results = await hybridSearch(query, {
   keywordWeight: 0.3,
   semanticWeight: 0.7
 });
-```markdown
+```text
 
 ### 2. Re-ranking
 
@@ -73,14 +73,14 @@ import { CohereRerank } from 'langchain/cohere-rerank';
 
 const reranker = new CohereRerank();
 const reranked = await reranker.rerank(results, query, { topK: 5 });
-```markdown
+```text
 
 ### 3. 缓存
 
 ```typescript
 const cache = new InMemoryCache();
 const results = await cache.get(query) || await vectorStore.similaritySearch(query);
-```markdown
+```text
 
 ## 最佳实践
 

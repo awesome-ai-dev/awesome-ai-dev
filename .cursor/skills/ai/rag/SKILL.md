@@ -7,7 +7,7 @@ description: RAG 系统 - LangChain/Vectara/向量数据库/文档分割
 
 ## 架构
 
-```markdown
+```text
 用户问题 → 检索 → 向量库 → 相关文档 → LLM → 回答
 ```
 
@@ -63,7 +63,7 @@ const codeSplitter = new RecursiveCharacterTextSplitter({
   chunkOverlap: 50,
   separators: ['\n\n', '\n', '```', ' ']
 });
-```markdown
+```
 
 ## 检索优化
 
@@ -80,7 +80,7 @@ const retriever = vectorStore.asRetriever({
 
 // 混合搜索
 const fusionRetriever = new FusionRetriever([keywordRetriever, semanticRetriever]);
-```markdown
+```
 
 ## 最佳实践
 

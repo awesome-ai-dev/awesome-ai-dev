@@ -54,7 +54,7 @@ async function updateUser(id: string, data: User) {
 ## 缓存策略详解
 
 | 策略 | 适用场景 |
-|------|----------|
+| --- | --- |
 | Cache-Aside | 读多写少 |
 | Write-Through | 数据一致性要求高 |
 | Write-Behind | 写入性能要求高 |

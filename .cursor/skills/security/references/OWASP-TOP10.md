@@ -256,7 +256,11 @@ async function authenticate(email, password) {
 // ✅ 验证数据完整性
 import crypto from 'crypto';
 
-function verifyWebhook(payload: string, signature: string, secret: string): boolean {
+function verifyWebhook(
+  payload: string,
+  signature: string,
+  secret: string
+): boolean {
   const expected = crypto
     .createHmac('sha256', secret)
     .update(payload)

@@ -23,7 +23,11 @@ import Image from 'next/image';
 // ✅ 预连接关键资源
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossOrigin="anonymous"
+  />
 </head>
 
 // ✅ 使用字体显示选项

@@ -95,7 +95,7 @@ const history = await memory.loadMemoryVariables({});
 ## Agent 模式
 
 | 模式 | 说明 |
-|------|------|
+| --- | --- |
 | ReAct | 推理 + 行动 |
 | Plan-and-Execute | 计划后执行 |
 | Tool Use | 工具调用 |

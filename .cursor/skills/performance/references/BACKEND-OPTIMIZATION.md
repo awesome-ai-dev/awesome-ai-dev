@@ -247,7 +247,10 @@ const limiter = rateLimit({
 ```typescript
 import { performance } from 'perf_hooks';
 
-async function measurePerformance<T>(fn: () => Promise<T>, label: string): Promise<T> {
+async function measurePerformance<T>(
+  fn: () => Promise<T>,
+  label: string
+): Promise<T> {
   const start = performance.now();
   
   try {

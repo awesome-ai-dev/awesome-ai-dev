@@ -26,13 +26,13 @@
 ### 通用
 
 | 文件 | 说明 |
-|------|------|
+ |---:| --- ||
 | project.mdc | 通用项目规范 |
 
 ### 前端规范
 
 | 文件 | 说明 |
-|------|------|
+ |---:| --- ||
 | react.mdc | React 19 |
 | vue3.mdc | Vue 3 |
 | nextjs.mdc | Next.js |
@@ -41,7 +41,7 @@
 ### 后端规范
 
 | 文件 | 说明 |
-|------|------|
+ |---:| --- ||
 | nestjs.mdc | NestJS |
 | python-fastapi.mdc | FastAPI |
 | go.mdc | Go |
@@ -50,14 +50,14 @@
 ### DevOps 规范
 
 | 文件 | 说明 |
-|------|------|
+ |---:| --- ||
 | dockerfile.mdc | Docker |
 | kubernetes.mdc | Kubernetes |
 
 ### AI 规范
 
 | 文件 | 说明 |
-|------|------|
+ |---:| --- ||
 | python-data.mdc | Python 数据科学 |
 | rust.mdc | Rust |
 
@@ -66,7 +66,7 @@
 ### 前端技能
 
 | 技能 | 说明 |
-|------|------|
+ |---:| --- ||
 | frontend/state | 状态管理 |
 | frontend/ui | UI 组件库 |
 | frontend/css | CSS 框架 |
@@ -74,7 +74,7 @@
 ### 后端技能
 
 | 技能 | 说明 |
-|------|------|
+ |---:| --- ||
 | backend/auth | 认证授权 |
 | backend/orm | ORM 使用 |
 | backend/cache | 缓存策略 |
@@ -82,7 +82,7 @@
 ### DevOps 技能
 
 | 技能 | 说明 |
-|------|------|
+ |---:| --- ||
 | devops/ci-cd | CI/CD 流水线 |
 | devops/monitoring | 监控告警 |
 | devops/infra | 基础设施 |
@@ -90,7 +90,7 @@
 ### AI 技能
 
 | 技能 | 说明 |
-|------|------|
+ |---:| --- ||
 | ai/llm | LLM 应用开发 |
 | ai/rag | RAG 系统 |
 | ai/agent | Agent 开发 |
@@ -98,7 +98,7 @@
 ### 专项技能
 
 | 技能 | 说明 |
-|------|------|
+ |---:| --- ||
 | database | 数据库优化 |
 | testing | 测试工程 |
 | security | 安全加固 |
@@ -111,7 +111,7 @@
 ## Agents 索引
 
 | Agent | 说明 |
-|-------|------|
+| --- | ---- |
 | architect | 架构师 |
 | fullstack-developer | 全栈开发 |
 | backend-developer | 后端开发 |

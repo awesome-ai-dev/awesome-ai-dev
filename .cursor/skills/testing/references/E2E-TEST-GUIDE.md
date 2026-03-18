@@ -69,7 +69,8 @@ test.describe('User Login', () => {
     await page.click('[type="submit"]');
     
     await expect(page).toHaveURL('/dashboard');
-    await expect(page.locator('[data-testid="user-name"]')).toContainText('Test User');
+    await expect(page.locator('[data-testid="user-name"]'))
+      .toContainText('Test User');
   });
 
   test('should show error with invalid credentials', async ({ page }) => {

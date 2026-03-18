@@ -14,7 +14,10 @@ const hashPassword = async (password: string): Promise<string> => {
   return bcrypt.hash(password, salt);
 };
 
-const verifyPassword = async (password: string, hash: string): Promise<boolean> => {
+const verifyPassword = async (
+  password: string,
+  hash: string
+): Promise<boolean> => {
   return bcrypt.compare(password, hash);
 };
 
@@ -34,7 +37,9 @@ const hashPasswordArgon2 = async (password: string): Promise<string> => {
 ### 密码策略
 
 ```typescript
-const validatePassword = (password: string): { valid: boolean; errors: string[] } => {
+const validatePassword = (
+  password: string
+): { valid: boolean; errors: string[] } => {
   const errors: string[] = [];
   
   if (password.length < 8) {

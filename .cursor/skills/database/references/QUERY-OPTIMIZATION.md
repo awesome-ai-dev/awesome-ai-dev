@@ -26,7 +26,7 @@ const users = await prisma.user.findMany({
 ### 解决方案
 
 | 方法 | 适用场景 | 示例 |
-|-----|---------|------|
+| --- | --- | --- |
 | include | 一对多、多对多 | `include: { posts: true }` |
 | select | 只取关联字段 | `select: { posts: { select: { title: true } } }` |
 | join (Raw SQL) | 复杂查询 | `prisma.$queryRaw` |

@@ -9,7 +9,7 @@ description: RAG 系统 - LangChain/Vectara/向量数据库/文档分割
 
 ```markdown
 用户问题 → 检索 → 向量库 → 相关文档 → LLM → 回答
-```markdown
+```
 
 ## LangChain
 
@@ -44,7 +44,7 @@ await store.addDocuments(splitDocs);
 // 检索
 const retriever = store.asRetriever();
 const results = await retriever.getRelevantDocuments('问题');
-```markdown
+```
 
 ## 文档分割策略
 

@@ -6,67 +6,50 @@
 
 ```text
 .cursor/
-├── rules/          # 开发规范
-│   ├── frontend/   # 前端规范
-│   ├── backend/    # 后端规范
-│   ├── devops/     # DevOps 规范
-│   └── ai/         # AI 规范
-├── skills/         # 技能
-│   ├── frontend/   # 前端技能
-│   ├── backend/    # 后端技能
-│   ├── devops/     # DevOps 技能
-│   └── ai/         # AI 技能
-├── agents/         # 子代理
+├── rules/          # 开发规范 (.mdc 文件)
+├── skills/         # 技能 (含 scripts/references/assets)
+├── agents/         # 子代理 (.md 文件)
 ├── mcp.json        # MCP 配置
-└── hooks.json      # 钩子配置
+├── hooks.json      # 钩子配置
+└── README.md      # 本索引文件
 ```
 
 ## Rules 索引
 
-### 通用
-
 | 文件 | 说明 |
- |---:| --- ||
+| --- | --- |
 | project.mdc | 通用项目规范 |
-
-### 前端规范
-
-| 文件 | 说明 |
- |---:| --- ||
-| react.mdc | React 19 |
-| vue3.mdc | Vue 3 |
-| nextjs.mdc | Next.js |
-| frontend/typescript.mdc | TypeScript |
-
-### 后端规范
-
-| 文件 | 说明 |
- |---:| --- ||
-| nestjs.mdc | NestJS |
-| python-fastapi.mdc | FastAPI |
-| go.mdc | Go |
-| mongodb.mdc | MongoDB |
-
-### DevOps 规范
-
-| 文件 | 说明 |
- |---:| --- ||
-| dockerfile.mdc | Docker |
-| kubernetes.mdc | Kubernetes |
-
-### AI 规范
-
-| 文件 | 说明 |
- |---:| --- ||
+| react.mdc | React 19 开发规范 |
+| vue3.mdc | Vue 3 开发规范 |
+| nextjs.mdc | Next.js 开发规范 |
+| typescript.mdc | TypeScript 规范 |
+| nestjs.mdc | NestJS 开发规范 |
+| python-fastapi.mdc | FastAPI 开发规范 |
+| go.mdc | Go 开发规范 |
+| rust.mdc | Rust 开发规范 |
+| mongodb.mdc | MongoDB 规范 |
 | python-data.mdc | Python 数据科学 |
-| rust.mdc | Rust |
+| dockerfile.mdc | Dockerfile 规范 |
+| kubernetes.mdc | Kubernetes 规范 |
+| linux.mdc | Linux 规范 |
+| git.mdc | Git 规范 |
+| api-design.mdc | API 设计规范 |
+| testing.mdc | 测试规范 |
 
 ## Skills 索引
+
+### AI 技能
+
+| 技能 | 说明 |
+| --- | --- |
+| ai/llm | LLM 应用开发 |
+| ai/rag | RAG 系统 |
+| ai/agent | Agent 开发 |
 
 ### 前端技能
 
 | 技能 | 说明 |
- |---:| --- ||
+| --- | --- |
 | frontend/state | 状态管理 |
 | frontend/ui | UI 组件库 |
 | frontend/css | CSS 框架 |
@@ -74,7 +57,7 @@
 ### 后端技能
 
 | 技能 | 说明 |
- |---:| --- ||
+| --- | --- |
 | backend/auth | 认证授权 |
 | backend/orm | ORM 使用 |
 | backend/cache | 缓存策略 |
@@ -82,23 +65,15 @@
 ### DevOps 技能
 
 | 技能 | 说明 |
- |---:| --- ||
+| --- | --- |
 | devops/ci-cd | CI/CD 流水线 |
 | devops/monitoring | 监控告警 |
 | devops/infra | 基础设施 |
 
-### AI 技能
-
-| 技能 | 说明 |
- |---:| --- ||
-| ai/llm | LLM 应用开发 |
-| ai/rag | RAG 系统 |
-| ai/agent | Agent 开发 |
-
 ### 专项技能
 
 | 技能 | 说明 |
- |---:| --- ||
+| --- | --- |
 | database | 数据库优化 |
 | testing | 测试工程 |
 | security | 安全加固 |
@@ -111,16 +86,14 @@
 ## Agents 索引
 
 | Agent | 说明 |
-| --- | ---- |
+| --- | --- |
 | architect | 架构师 |
 | fullstack-developer | 全栈开发 |
-| backend-developer | 后端开发 |
-| frontend-developer | 前端开发 |
 | devops-engineer | DevOps 工程师 |
 | data-engineer | 数据工程师 |
 | security-expert | 安全专家 |
-| test-engineer | 测试工程师 |
-| code-reviewer | 代码审查员 |
+| test-generator | 测试工程师 |
+| code-review | 代码审查员 |
 | bug-hunter | Bug 追踪 |
 | refactor | 重构专家 |
 | debugger | 调试专家 |
@@ -138,14 +111,26 @@
 @.cursor/agents/architect # 调用架构师代理
 ```
 
----
-
 ## 配置文件说明
 
 ### mcp.json
 
-MCP (Model Context Protocol) 服务器配置，支持多种工具集成。
+MCP (Model Context Protocol) 服务器配置，支持多种工具集成：
+- filesystem - 文件系统
+- git - Git 操作
+- puppeteer - 浏览器自动化
+- postgres - PostgreSQL 数据库
+- sqlite - SQLite 数据库
+- search - 搜索功能
+- everart - 图像生成
+- slack - Slack 集成
+- sentry - 错误追踪
 
 ### hooks.json
 
-Git 钩子配置，支持提交前检查、代码格式化等。
+Git 钩子配置：
+
+- format-on-save - 保存文件后自动格式化
+- lint-on-save - 保存文件后自动修复 ESLint 错误
+- typecheck - 提交前检查类型
+- test-before-commit - 提交前运行测试

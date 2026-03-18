@@ -24,7 +24,7 @@ export default function Page() {
     </div>
   );
 }
-```bash
+```
 
 ### 2. Server Actions
 
@@ -47,7 +47,7 @@ import { createUser } from './actions';
   <input name="name" />
   <button type="submit">提交</button>
 </form>
-```bash
+```
 
 ### 3. use() 在 Server Components
 
@@ -60,7 +60,7 @@ async function UserProfile({ userPromise }) {
 <Suspense fallback={<Loading />}>
   <UserProfile userPromise={getUser(id)} />
 </Suspense>
-```bash
+```
 
 ## 数据获取
 
@@ -78,7 +78,7 @@ export default async function Page() {
   const data = await getData();
   return <div>{data.title}</div>;
 }
-```bash
+```
 
 ### Client Component
 
@@ -90,13 +90,13 @@ function UserList({ usersPromise }) {
   const users = use(usersPromise);
   return <ul>{users.map(u => <li key={u.id}>{u.name}</li>)}</ul>;
 }
-```bash
+```
 
 ## 路由规范
 
 ### 目录结构
 
-```bash
+```text
 app/
 ├── (group)/           # 路由组
 │   ├── page.tsx
@@ -106,7 +106,7 @@ app/
 │   └── users/
 │       └── route.ts
 └── layout.tsx
-```bash
+```
 
 ### 特殊文件
 

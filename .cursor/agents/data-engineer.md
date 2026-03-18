@@ -30,7 +30,7 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 数据架构
 
 ## 处理流程

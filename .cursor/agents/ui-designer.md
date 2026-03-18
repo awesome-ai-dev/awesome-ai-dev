@@ -36,7 +36,7 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 设计方案
 
 ## 组件结构

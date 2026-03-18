@@ -23,7 +23,7 @@ class UserService {
 @Controller()
 class UserController {
   constructor(private userService: UserService) {}
-  
+
   @Get()
   findAll() { return this.userService.findAll(); }
 }
@@ -33,7 +33,7 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
-```bash
+```
 
 ### Signal-based 状态
 
@@ -43,10 +43,10 @@ import { signal, computed } from '@nestjs/core';
 class CounterService {
   count = signal(0);
   double = computed(() => this.count() * 2);
-  
+
   increment() { this.count.update(c => c + 1); }
 }
-```bash
+```
 
 ### 依赖注入
 
@@ -55,11 +55,11 @@ class CounterService {
 export class UserController {
   constructor(private userService: UserService) {}
 }
-```bash
+```
 
 ## 模块结构
 
-```bash
+```text
 src/
 ├── controllers/
 ├── services/
@@ -68,7 +68,7 @@ src/
 ├── entities/
 ├── guards/
 └── filters/
-```bash
+```
 
 ## 控制器
 
@@ -79,14 +79,14 @@ export class UserController {
   findOne(@Param('id') id: string) {
     return this.userService.findOne(id);
   }
-  
+
   @Post()
   @UseGuards(AuthGuard)
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 }
-```bash
+```
 
 ## 最佳实践
 

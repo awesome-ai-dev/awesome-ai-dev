@@ -17,7 +17,7 @@ let num: number = 1;
 let bool: boolean = true;
 let arr: string[] = ['a', 'b'];
 let obj: Record<string, any> = {};
-```bash
+```
 
 ### 接口 vs 类型
 
@@ -31,7 +31,7 @@ interface User {
 // 类型 - 联合/交叉
 type Status = 'active' | 'inactive';
 type UserWithRole = User & { role: string };
-```bash
+```
 
 ### 泛型
 
@@ -44,7 +44,7 @@ interface ApiResponse<T> {
   data: T;
   status: number;
 }
-```bash
+```
 
 ## Utility Types
 
@@ -61,7 +61,7 @@ type ReadonlyUser = Readonly<User>;
 // Pick / Omit
 type UserPreview = Pick<User, 'id' | 'name'>;
 type NoPassword = Omit<User, 'password'>;
-```bash
+```
 
 ## 最佳实践
 

@@ -46,7 +46,7 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 重构计划
 
 待重构代码
@@ -59,8 +59,5 @@ model: fast
 [重构策略]
 
 重构后代码
-```typescript
-// 重构后的代码
-```markdown
 
 ```markdown

@@ -25,7 +25,7 @@ df.drop_duplicates()
 # 数据转换
 df['date'] = pd.to_datetime(df['date'])
 df = df.groupby('category').agg({'value': 'sum'})
-```bash
+```
 
 ### NumPy
 
@@ -35,7 +35,7 @@ import numpy as np
 arr = np.array([1, 2, 3])
 arr.reshape(3, 1)
 np.dot(a, b)
-```bash
+```
 
 ## 机器学习
 
@@ -49,7 +49,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
-```bash
+```
 
 ### PyTorch
 
@@ -60,7 +60,7 @@ import torch.nn as nn
 model = nn.Linear(10, 1)
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters())
-```bash
+```
 
 ## 可视化
 
@@ -73,7 +73,7 @@ plt.plot(x, y)
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.show()
-```bash
+```
 
 ### Seaborn
 
@@ -82,7 +82,7 @@ import seaborn as sns
 
 sns.lineplot(data=df, x='date', y='value')
 sns.heatmap(corr_matrix)
-```bash
+```
 
 ## 最佳实践
 

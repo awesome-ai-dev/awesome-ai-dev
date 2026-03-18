@@ -9,7 +9,7 @@ alwaysApply: false
 
 ## 分支管理
 
-```bash
+```text
 main      ──── 生产环境
 │
 develop   ──── 开发主分支
@@ -18,19 +18,19 @@ feature/  ──── 功能分支
 bugfix/   ──── 修复分支
 hotfix/   ──── 紧急修复
 release/  ──── 发布分支
-```bash
+```
 
 ## 提交规范
 
 ### 格式
 
-```bash
+```text
 <type>(<scope>): <subject>
 
 <body>
 
 Closes #123
-```bash
+```
 
 ### Type
 
@@ -44,17 +44,17 @@ Closes #123
 
 ### 示例
 
-```bash
+```text
 feat(auth): 添加 JWT 登录
 
 实现用户登录功能，支持 JWT Token 验证。
 
 Closes #123
-```bash
+```
 
 ## 常用命令
 
-```bash
+```sh
 # 创建分支
 git checkout -b feature/user-login
 
@@ -69,7 +69,7 @@ git stash push -m "work in progress"
 
 # 清理分支
 git remote prune origin
-```bash
+```
 
 ## 最佳实践
 

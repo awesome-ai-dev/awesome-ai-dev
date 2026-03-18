@@ -26,18 +26,14 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 错误分析
 
 错误类型
 [编译错误/运行时错误/逻辑错误]
 
-错误信息
-```markdown
-
 [错误信息]
-
-```markdown
+```
 
 ## 根因分析
 
@@ -46,15 +42,12 @@ model: fast
 ## 修复方案
 
 代码修改
-```typescript
-// 修改内容
-```markdown
 
-
+```yaml
 测试建议
 [建议添加的测试用例]
 
-```markdown
+```
 
 ## 注意事项
 

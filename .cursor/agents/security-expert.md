@@ -33,7 +33,7 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 安全问题
 
 ## 风险等级

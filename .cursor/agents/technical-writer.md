@@ -31,7 +31,7 @@ model: fast
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 标题
 
 ## 概述

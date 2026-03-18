@@ -30,7 +30,7 @@ model: balanced
 
 ## 输出格式
 
-```markdown
+```yaml
 ## 需求文档
 
 ## 功能列表

@@ -19,12 +19,11 @@ function UserProfile({ userPromise }) {
   return <div>{user.name}</div>;
 }
 
-// 读取 Context
 const ThemeContext = createContext(null);
 function App() {
   const theme = use(ThemeContext);
 }
-```bash
+```
 
 ### 2. Actions - 表单处理
 
@@ -45,18 +44,11 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return <button disabled={pending}>{pending ? '提交中...' : '提交'}</button>;
 }
-
-<form action={formAction}>
-  <input name="name" />
-  <SubmitButton />
-</form>
-```bash
+```
 
 ### 3. useOptimistic - 乐观更新
 
 ```typescript
-import { useOptimistic } from 'react';
-
 function LikeButton({ likes, onLike }) {
   const [optimisticLikes, addOptimisticLike] = useOptimistic(
     likes,
@@ -68,54 +60,39 @@ function LikeButton({ likes, onLike }) {
       addOptimisticLike(1);
       await onLike();
     }}>
-      👍 {optimisticLikes}
+      {optimisticLikes} Likes
     </button>
   );
 }
-```bash
+```
 
-## 组件模式
-
-### Server Component (默认)
+### 4. useDeferredValue - 延迟渲染
 
 ```typescript
-async function UserList() {
-  const users = await db.user.findMany();
-  return <List users={users} />;
+function SearchResults({ query }) {
+  const deferredQuery = useDeferredValue(query);
+  const results = useDeferredValue(useMemo(
+    () => searchProducts(deferredQuery),
+    [deferredQuery]
+  ));
+
+  return <ProductList products={results} />;
 }
-```bash
+```
 
-### Client Component
-
-```typescript
-'use client';
-import { useState, use, useActionState } from 'react';
-```bash
-
-## 状态管理
-
-- **Zustand**: 轻量状态
-- **Jotai**: 原子化状态
-- **TanStack Query**: 服务端状态
-- **useActionState**: 表单状态
-
-## 性能优化
+### 5. useFormStatus 与 useFormAction
 
 ```typescript
-<Suspense fallback={<Loading />}>
-  <UserProfile id={id} />
-</Suspense>
-
-const deferredQuery = useDeferredValue(query);
-```bash
+function SubmitButton() {
+  const { pending, data, method } = useFormStatus();
+  return <button disabled={pending}>{pending ? '提交中' : '提交'}</button>;
+}
+```
 
 ## 最佳实践
 
-1. 优先 Server Component
-2. 表单用 Actions
-3. 列表用 useOptimistic
-4. 用 use() 替代 useEffect + fetch
-
-## 参考
-
-- 详细: `.cursor/skills/code-review/references/CODE-STANDARDS.md`
+1. 使用 Server Actions 处理表单提交
+2. 用 useOptimistic 实现即时反馈
+3. 用 useDeferredValue 优化大数据渲染
+4. 区分客户端和服务器端组件
+5. 使用 'use client' 标记客户端组件

@@ -11,13 +11,13 @@ alwaysApply: true
 
 ### 格式
 
-```bash
+```text
 <type>(<scope>): <subject>
 
 <body>
 
 Closes #123
-```bash
+```
 
 ### Type
 
@@ -42,7 +42,7 @@ Closes #123
     "moduleResolution": "bundler"
   }
 }
-```bash
+```
 
 ### 导入顺序
 
@@ -58,7 +58,7 @@ import { useUserStore } from '@/stores';
 
 // 4. 类型
 import type { User } from '@/types';
-```bash
+```
 
 ## AI 辅助开发
 
@@ -71,7 +71,7 @@ import type { User } from '@/types';
 
 ### 提示词结构
 
-```markdown
+```yaml
 ## 需求
 [描述需求]
 
@@ -83,7 +83,7 @@ import type { User } from '@/types';
 1. 遵循项目规范
 2. 包含错误处理
 3. 类型安全
-```bash
+```
 
 ## 目录原则
 

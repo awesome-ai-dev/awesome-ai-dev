@@ -11,7 +11,7 @@ alwaysApply: false
 
 ### 文件操作
 
-```bash
+```sh
 # 查找
 find . -name "*.ts" -type f
 grep -r "function" --include="*.ts"
@@ -23,11 +23,11 @@ tar -xzvf archive.tar.gz
 # 权限
 chmod +x script.sh
 chown user:group file
-```bash
+```
 
 ### 系统管理
 
-```bash
+```sh
 # 进程
 ps aux | grep node
 top / htop
@@ -40,11 +40,11 @@ ss -tulpn | grep LISTEN
 # 磁盘
 df -h
 du -sh directory/
-```bash
+```
 
 ## Shell 脚本
 
-```bash
+```sh
 #!/bin/bash
 
 set -euo pipefail
@@ -68,11 +68,11 @@ function greet() {
     echo "Hello $1"
 }
 greet "World"
-```bash
+```
 
 ## Docker 命令
 
-```bash
+```sh
 # 镜像
 docker build -t myapp .
 docker images
@@ -84,7 +84,7 @@ docker logs -f container
 
 # 清理
 docker system prune -a
-```bash
+```
 
 ## 最佳实践
 

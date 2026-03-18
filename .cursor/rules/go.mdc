@@ -25,7 +25,7 @@ var wg sync.WaitGroup
 wg.Add(1)
 go func() { defer wg.Done(); ... }()
 wg.Wait()
-```bash
+```
 
 ### 接口
 
@@ -39,7 +39,7 @@ var v interface{}
 
 // 类型断言
 v, ok := i.(string)
-```bash
+```
 
 ### 错误处理
 
@@ -51,16 +51,16 @@ func readFile(path string) error {
     }
     return nil
 }
-```bash
+```
 
 ## 项目结构
 
-```bash
+```text
 cmd/
 pkg/
 internal/
 api/
-```bash
+```
 
 ## 最佳实践
 

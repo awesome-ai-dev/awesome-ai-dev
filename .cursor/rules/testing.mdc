@@ -16,14 +16,14 @@ describe('UserService', () => {
   it('should create user', async () => {
     const mockRepo = vi.fn().mockResolvedValue({ id: 1, name: 'John' });
     const service = new UserService(mockRepo);
-    
+
     const user = await service.create({ name: 'John' });
-    
+
     expect(user.id).toBe(1);
     expect(mockRepo).toHaveBeenCalled();
   });
 });
-```bash
+```
 
 ## React Testing Library
 
@@ -33,13 +33,13 @@ import userEvent from '@testing-library/user-event';
 
 test('should submit form', async () => {
   render(<Form onSubmit={fn} />);
-  
+
   await userEvent.type(screen.getByLabelText('Name'), 'John');
   await userEvent.click(screen.getByRole('button', { name: 'Submit' }));
-  
+
   expect(fn).toHaveBeenCalledWith({ name: 'John' });
 });
-```bash
+```
 
 ## Playwright
 
@@ -51,10 +51,10 @@ test('login flow', async ({ page }) => {
   await page.fill('[name=email]', 'test@example.com');
   await page.fill('[name=password]', 'password');
   await page.click('button[type=submit]');
-  
+
   await expect(page).toHaveURL('/dashboard');
 });
-```bash
+```
 
 ## 最佳实践
 

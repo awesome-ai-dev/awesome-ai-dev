@@ -51,7 +51,7 @@
 
 在开始之前，先了解五个核心概念：
 
-```
+```md
 ┌─────────────────────────────────────────────────────────┐
 │                    你的 AI 开发系统                       │
 ├─────────────────────────────────────────────────────────┤
@@ -109,7 +109,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 
 ### 2. 使用
 
-```text
+```bash
 # 使用规范
 @react
 帮我写个登录组件
@@ -129,7 +129,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 
 ### .cursor — IDE 配置
 
-```
+```yaml
 .cursor/
 ├── rules/          # 开发规范 (20+)
 ├── skills/         # 专业技能 (15+)
@@ -141,7 +141,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 **Rules 涵盖框架：**
 
 | 框架 | 说明 |
-|------|------|
+| ------ | ------ |
 | React | React 19 开发规范 |
 | Vue | Vue 3 开发规范 |
 | Next.js | Next.js 15 开发规范 |
@@ -156,7 +156,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 **Skills 涵盖领域：**
 
 | 领域 | 说明 |
-|------|------|
+| ------ | ------ |
 | 前端 | 状态管理、UI 组件、CSS 框架 |
 | 后端 | 认证授权、ORM 使用、缓存策略 |
 | DevOps | Docker、CI/CD、监控、部署 |
@@ -166,7 +166,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 **Agents 涵盖角色：**
 
 | Agent | 角色 |
-|-------|------|
+| ------- | ------ |
 | architect | 系统架构师 |
 | code-review | 代码审查员 |
 | bug-hunter | Bug 猎人 |
@@ -179,7 +179,7 @@ cp .cursor/rules/react.mdc 你的项目/.cursor/rules/
 
 ### ai-tools — AI 工具推荐
 
-```
+```yaml
 ai-tools/
 ├── 索引.md              # 工具索引
 ├── 开发工具.md          # 开发工具
@@ -197,7 +197,7 @@ ai-tools/
 **涵盖类别：**
 
 | 类别 | 内容 |
-|------|------|
+| ------ | ------ |
 | 开发工具 | Cursor、Windsurf、Zed、GitHub Copilot |
 | 设计创意 | Figma、v0、Midjourney、Runway |
 | 写作内容 | Jasper、Notion AI、DeepL |
@@ -206,7 +206,7 @@ ai-tools/
 
 ### prompts — 场景提示词
 
-```
+```yaml
 prompts/
 ├── 索引.md               # 提示词索引
 ├── 项目初始化.md         # 项目初始化
@@ -228,7 +228,7 @@ prompts/
 
 **使用方式：**
 
-```text
+```bash
 @prompts/项目初始化  # 初始化项目
 @prompts/AI应用     # AI 应用开发
 ```
@@ -238,7 +238,7 @@ prompts/
 ## 项目统计
 
 | 类别 | 数量 | 说明 |
-|------|------|------|
+| ------ | ------ | ------ |
 | Rules 规范 | 20+ | 覆盖主流框架和通用技术 |
 | Skills 技能 | 15+ | 包含脚本、文档、配置 |
 | Agents 代理 | 14 | 专业领域的 AI 助手 |
@@ -250,7 +250,7 @@ prompts/
 ## 相关资源
 
 | 资源 | 说明 |
-|------|------|
+| ------ | ------ |
 | [AI 工具推荐](./ai-tools/) | 各类 AI 工具合集 |
 | [场景提示词](./prompts/) | 开发场景提示词 |
 | [详细文档](./docs/) | 项目详细说明 |

@@ -18,7 +18,7 @@
 
 ### 贡献流程
 
-```text
+```bash
 1. Fork 本项目
 2. 创建分支 (git checkout -b feature/xxx)
 3. 提交更改 (git commit -m 'add: xxx')
@@ -95,7 +95,7 @@ ai-summary/
 
 ### 示例
 
-```text
+```bash
 feat(rules): 添加 Flutter 开发规范
 
 添加 Flutter 3 开发规范，包含：
